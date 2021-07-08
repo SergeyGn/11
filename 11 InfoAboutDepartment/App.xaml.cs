@@ -14,9 +14,4 @@ namespace _11_InfoAboutDepartment
     public partial class App : Application
     {
     }
-    [STAThread]
-    public static void Main()
-    {
-        
-    }
 }

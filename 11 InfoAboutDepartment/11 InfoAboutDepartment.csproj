@@ -59,10 +59,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="App.xaml.cs">
+    <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Page>
+    </Compile>
     <Compile Include="Boss.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Employee.cs" />
