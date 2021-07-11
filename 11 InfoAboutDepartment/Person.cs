@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _11_InfoAboutDepartment
 {
-   abstract class Person
+  public abstract class Person
     {
         private string _firstName;
         private string _lastName;

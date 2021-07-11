@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _11_InfoAboutDepartment
 {
-    class Department
+    public class Department
     {
 
         /// <summary>
@@ -18,13 +18,49 @@ namespace _11_InfoAboutDepartment
         /// </summary>
         private List<Person> _persons;
         /// <summary>
-        /// департаменты в подчинении этого департамента
+        /// кол-во департаментов в подчинении
         /// </summary>
-        private List<Department> departments;
+        private int _countDepartment;
+        /// <summary>
+        /// кол-во сотрудников в департаменте
+        /// </summary>
+        private int _countPerson;
+        /// <summary>
+        /// начальник департамента
+        /// </summary>
+        private Person _bossDepartment;
 
-        internal List<Department> Departments { get => departments; set => departments = value; }
-        internal List<Person> Peson { get => _persons; set => _persons = value; }
+        public Department(string DepartmentName)
+        {
+            List<Person> person = new List<Person>();
+            List<Department> dep = new List<Department>();
+            this.DepartmentName = DepartmentName;
+            Persons = person;
+            Departments = dep;
+            CountPerson = person.Count;
+            CountDepartment = dep.Count;
+        }
+
+        public Department(string DepartmentName, List<Person> Persons, List<Department> Departments)
+        {
+            this.DepartmentName = DepartmentName;
+            this.Persons = Persons;
+            this.Departments = Departments;
+            CountPerson = Persons.Count;
+            CountDepartment = Departments.Count;
+        }
 
 
+
+        public Department():this("",new List<Person>(),new List<Department>())
+        {
+        }
+
+        public string DepartmentName { get => _departmentName; set => _departmentName = value; }
+        public List<Department> Departments { get; set; }
+        public List<Person> Persons { get => _persons; set => _persons = value; }
+        public int CountDepartment { get => _countDepartment; set => _countDepartment = value; }
+        public int CountPerson { get => _countPerson; set => _countPerson = value; }
+        public Person BossDepartment { get => _bossDepartment; set => _bossDepartment = value; }
     }
 }

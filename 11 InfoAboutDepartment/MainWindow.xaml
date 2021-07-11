@@ -27,6 +27,7 @@
                        VerticalAlignment="Center"
                        Text="Все департаменты:"/>
             <ListView x:Name="ListDepartments"
+            HorizontalContentAlignment="Stretch"
             HorizontalAlignment="Stretch" 
             VerticalAlignment="Stretch" 
                  Grid.Row="1"
@@ -82,7 +83,7 @@ DepartmentName:
                            Text="Департаменты в подчинении:"
                            FontSize="10">
                 </TextBlock>
-                <ListBox x:Name="DepartmentsInDepartment"
+                <ListView x:Name="DepartmentsInDepartment"
                          Grid.Column="0"
                          Grid.Row="1"
                          Margin="5">
@@ -93,7 +94,7 @@ DepartmentName:
                             </TextBlock>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
-                </ListBox>
+                </ListView>
                 <TextBlock Grid.Column="1"
                            Grid.Row="0"
                            HorizontalAlignment="Center"
@@ -105,7 +106,8 @@ DepartmentName:
                          Grid.Column="1"
                          Grid.Row="1"
                          Margin="5"
-                          FontSize="9">
+                          FontSize="9"
+                          HorizontalAlignment="Stretch">
                     <ListView.View >
                         <GridView>
                             <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" Width="50"/>
@@ -142,7 +144,7 @@ DepartmentName:
                      Grid.Row="1"
                      Height="30"
                      Width="30"
-                     FontSize="9">
+                     FontSize="9" Click="CreateDepartment_Click">
              Create
             </Button>
             <Button  x:Name="DeleteDepartment"
