@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,21 @@ namespace _11_InfoAboutDepartment
             string json = File.ReadAllText(path);
             dep=JsonConvert.DeserializeObject<Department>(json);
             return dep;
+        }
+
+        public static bool CheckDate(string input)
+        {
+            DateTime date; 
+            bool isDate = false;
+            
+            if (DateTime.TryParseExact(input, "dd.MM.yyyy", null, DateTimeStyles.None, out date))
+            {
+                return isDate=true;
+            }
+            else
+            {
+                return isDate;
+            }
         }
     }
 }

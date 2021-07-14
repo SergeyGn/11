@@ -46,6 +46,12 @@ namespace _11_InfoAboutDepartment
             CreateDepartmentWindow.Show();
         }
 
+        private void CreatePerson_Click(object sender, RoutedEventArgs e)
+        {
+            CPersonWindow CreatePersonWindow = new CPersonWindow();
+            CreatePersonWindow.Owner = this;
+            CreatePersonWindow.Show();
+        }
     }
 
 }

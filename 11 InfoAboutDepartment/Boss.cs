@@ -10,16 +10,16 @@ namespace _11_InfoAboutDepartment
     {
         private const double _percent = 0.15; //15 процентов по тз
         private const double _minDilaryBoss = 1300; //минимальная зп по тз 
-        Department _department;
+        private  Department _department;
 
         public Boss() : this("","",DateTime.Now,DateTime.Now,"",new Department())
         {
-
         }
 
         public Boss(string FirstName, string LastName, DateTime DateBirthDay, DateTime DateStartWork, string NameDepartment, Department department) 
-            : base(FirstName, LastName, DateBirthDay, DateStartWork, NameDepartment)
+            : base(FirstName, LastName, DateBirthDay, DateStartWork, NameDepartment, $"Начальник {NameDepartment}")
         {
+            Department = department;
             Salary = GetSalary();
         }
 
@@ -28,6 +28,7 @@ namespace _11_InfoAboutDepartment
         public override double GetSalary()
         {
             double dilaryAllWorkersDepartment=0;
+            Department = new Department();
             for(int i=0; i<Department.Persons.Count;i++) //перечисляем всех сотрудников в департаменте начальника
             {
                 dilaryAllWorkersDepartment += Department.Persons[i].GetSalary();

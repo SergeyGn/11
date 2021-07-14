@@ -25,6 +25,7 @@ namespace _11_InfoAboutDepartment
     public partial class CDepartmentWindow : Window
     {
         Department newDepartment;
+        List<Department> AddDepartment = new List<Department>();
         public CDepartmentWindow()
         {
             ObservableCollection<Department> departments=new ObservableCollection<Department>();
@@ -45,7 +46,15 @@ namespace _11_InfoAboutDepartment
             else
             {
                 string nameDepartment = NameDepartment.Text;
+
+                for (int i = 0; i < ListDepartments.SelectedItems.Count; i++)
+                {
+                    AddDepartment.Add(ListDepartments.SelectedItems[i] as Department);
+                }                   
+
                 newDepartment = new Department(nameDepartment);
+                newDepartment.Departments = AddDepartment;
+                newDepartment.CountDepartment = AddDepartment.Count;
                 MainWindow.MainDepartment.Departments.Add(newDepartment);
                 Program.Save(MainWindow.MainDepartment);
                 ListDepartments.Items.Refresh();

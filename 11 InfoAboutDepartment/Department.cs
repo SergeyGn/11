@@ -32,13 +32,12 @@ namespace _11_InfoAboutDepartment
 
         public Department(string DepartmentName)
         {
-            List<Person> person = new List<Person>();
-            List<Department> dep = new List<Department>();
+            Persons = new List<Person>();
+            Departments = new List<Department>();
             this.DepartmentName = DepartmentName;
-            Persons = person;
-            Departments = dep;
-            CountPerson = person.Count;
-            CountDepartment = dep.Count;
+
+            CountPerson = Persons.Count;
+            CountDepartment = Departments.Count;
         }
 
         public Department(string DepartmentName, List<Person> Persons, List<Department> Departments)
@@ -46,14 +45,26 @@ namespace _11_InfoAboutDepartment
             this.DepartmentName = DepartmentName;
             this.Persons = Persons;
             this.Departments = Departments;
-            CountPerson = Persons.Count;
-            CountDepartment = Departments.Count;
+            CountPerson = GetCountPerson();
+            CountDepartment = GetCountDepartment();
         }
 
 
 
         public Department():this("",new List<Person>(),new List<Department>())
         {
+        }
+
+        public int GetCountPerson()
+        {
+            int CountPer = Persons.Count;
+            return CountPer;
+        }
+
+        public int GetCountDepartment()
+        {
+            int CountDep = Departments.Count;
+            return CountDep;
         }
 
         public string DepartmentName { get => _departmentName; set => _departmentName = value; }

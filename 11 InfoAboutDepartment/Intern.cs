@@ -11,7 +11,7 @@ namespace _11_InfoAboutDepartment
         const double _fixedSalary=300;
 
         public Intern(string FirstName, string LastName, DateTime DateBirthDay, DateTime DateStartWork, string NameDepartment) 
-            : base(FirstName, LastName, DateBirthDay, DateStartWork, NameDepartment)
+            : base(FirstName, LastName, DateBirthDay, DateStartWork, NameDepartment,"Интерн")
         {
             Salary = GetSalary();
         }

@@ -10,7 +10,7 @@ namespace _11_InfoAboutDepartment
     {
         private int _countWorkingDay;
         public Employee(string FirstName, string LastName, DateTime DateBirthDay, DateTime DateStartWork, string NameDepartment, int CountWorkingDay)
-            : base(FirstName, LastName, DateBirthDay, DateStartWork, NameDepartment)
+            : base(FirstName, LastName, DateBirthDay, DateStartWork, NameDepartment,"Рабочий")
         {
             this.CountWorkingDay = CountWorkingDay;
             Salary = GetSalary();

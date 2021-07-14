@@ -15,6 +15,7 @@ namespace _11_InfoAboutDepartment
         private int _experience;
         private string _nameDepartment;
         private double _salary;
+        private string _profession;
 
         protected string FirstName { get => _firstName; set => _firstName = value; }
         protected string LastName { get => _lastName; set => _lastName = value; }
@@ -24,15 +25,16 @@ namespace _11_InfoAboutDepartment
         protected string NameDepartment { get => _nameDepartment; set => _nameDepartment = value; }
         protected double Salary { get => _salary; set => _salary = value; }
         protected int CountYearsPerson { get; set; }
+        protected string Profession { get => _profession; set => _profession = value; }
 
-        public Person(string FirstName,string LastName,DateTime DateBirthDay,DateTime DateStartWork,string NameDepartment
-             )
+        public Person(string FirstName,string LastName,DateTime DateBirthDay,DateTime DateStartWork,string NameDepartment, string Profession)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.DateBirthDay = DateBirthDay;
             this.DateStartWork = DateStartWork;
             this.NameDepartment = NameDepartment;
+            this.Profession = Profession;
 
 
             CountYearsPerson = GetCountYears(DateBirthDay);
