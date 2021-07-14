@@ -24,7 +24,7 @@ namespace _11_InfoAboutDepartment
         {
             Department dep = new Department();
             string json = File.ReadAllText(path);
-            dep=JsonConvert.DeserializeObject<Department>(json);
+            dep=JsonConvert.DeserializeObject<Department>(json);//как сделать?
             return dep;
         }
 
