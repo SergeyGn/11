@@ -29,13 +29,14 @@ namespace _11_InfoAboutDepartment
 
         public MainWindow()
         {
-            if (File.Exists(Program.path))
-            {
-               MainDepartment= Program.Load();
-            }
+            //if (File.Exists(Program.path))
+            //{
+            //   MainDepartment= Program.Load();
+            //}
 
             InitializeComponent();
             ListDepartments.ItemsSource = MainDepartment.Departments;
+            
              
         }
 
@@ -43,7 +44,9 @@ namespace _11_InfoAboutDepartment
         {
             CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow();
             CreateDepartmentWindow.Owner = this;
-            CreateDepartmentWindow.Show();
+            CreateDepartmentWindow.ShowDialog();
+
+            RefreshMainWindow();
         }
 
         private void CreatePerson_Click(object sender, RoutedEventArgs e)
@@ -51,6 +54,32 @@ namespace _11_InfoAboutDepartment
             CPersonWindow CreatePersonWindow = new CPersonWindow();
             CreatePersonWindow.Owner = this;
             CreatePersonWindow.Show();
+
+            RefreshMainWindow();
+        }
+
+
+        private void ListDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           Department currentDep = new Department();
+           currentDep = ListDepartments.SelectedItem as Department;
+           ListPersons.ItemsSource = currentDep.Persons;
+           DepartmentsInDepartment.ItemsSource = currentDep.Departments;
+        }
+
+        private void DepartmentsInDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Department currentDep = new Department();
+            currentDep = DepartmentsInDepartment.SelectedItem as Department;
+            PersonsInDepartment.ItemsSource = currentDep.Persons;
+        }
+
+        private void RefreshMainWindow()
+        {
+            ListDepartments.Items.Refresh();
+            DepartmentsInDepartment.Items.Refresh();
+            ListPersons.Items.Refresh();
+            PersonsInDepartment.Items.Refresh();
         }
     }
 

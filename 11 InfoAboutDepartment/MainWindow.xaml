@@ -31,7 +31,7 @@
             HorizontalAlignment="Stretch" 
             VerticalAlignment="Stretch" 
                  Grid.Row="1"
-                 Margin="5">
+                 Margin="5" SelectionChanged="ListDepartments_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Название" DisplayMemberBinding="{Binding NameDepartment}" />
@@ -50,22 +50,22 @@
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <ListView x:Name="PersonInDepartment"
+            <ListView x:Name="ListPersons"
                       Grid.Row="1"
-                      Margin="5"
+                      Margin="5" 
                       >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" Width="100"/>
                         <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}" Width="100"/>
-                        <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Null}" Width="100"/>
+                        <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Profession}" Width="100"/>
                         <GridViewColumn Header="З.П." DisplayMemberBinding="{Binding Salary}" Width="100"/>
                     </GridView>
                 </ListView.View>
             </ListView>
             <TextBlock HorizontalAlignment="Center"
                        VerticalAlignment="Center">
-DepartmentName:
+ Cотрудники в департаменте:
             </TextBlock>
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
@@ -86,7 +86,7 @@ DepartmentName:
                 <ListView x:Name="DepartmentsInDepartment"
                          Grid.Column="0"
                          Grid.Row="1"
-                         Margin="5">
+                         Margin="5" SelectionChanged="DepartmentsInDepartment_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock>
@@ -112,7 +112,7 @@ DepartmentName:
                         <GridView>
                             <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" Width="50"/>
                             <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}" Width="50"/>
-                            <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Null}" Width="50"/>
+                            <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Proffesion}" Width="50"/>
                             <GridViewColumn Header="З.П." DisplayMemberBinding="{Binding Salary}" Width="50"/>
                         </GridView>
                     </ListView.View>

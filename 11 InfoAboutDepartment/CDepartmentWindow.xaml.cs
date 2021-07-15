@@ -57,7 +57,6 @@ namespace _11_InfoAboutDepartment
                 newDepartment.CountDepartment = AddDepartment.Count;
                 MainWindow.MainDepartment.Departments.Add(newDepartment);
                 Program.Save(MainWindow.MainDepartment);
-                ListDepartments.Items.Refresh();
                 Close();
             }
 
@@ -67,5 +66,6 @@ namespace _11_InfoAboutDepartment
         {
             Close();
         }
+
     }
 }

@@ -130,6 +130,7 @@ namespace _11_InfoAboutDepartment
                         MainWindow.MainDepartment.Departments.Add(dep);
                         InfoPanel.Text = "идет сохранение";
                         Program.Save(MainWindow.MainDepartment);
+                        
                         Close();
                         break;
                     default:
