@@ -53,7 +53,7 @@ namespace _11_InfoAboutDepartment
         {
             CPersonWindow CreatePersonWindow = new CPersonWindow();
             CreatePersonWindow.Owner = this;
-            CreatePersonWindow.Show();
+            CreatePersonWindow.ShowDialog();
 
             RefreshMainWindow();
         }

@@ -34,9 +34,9 @@
                  Margin="5" SelectionChanged="ListDepartments_SelectionChanged">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Название" DisplayMemberBinding="{Binding NameDepartment}" />
+                        <GridViewColumn Header="Название" DisplayMemberBinding="{Binding DepartmentName}" />
                         <GridViewColumn Header="Кол-во сотрудников" DisplayMemberBinding="{Binding CountPerson}"/>
-                        <GridViewColumn Header="Кол-во департаментов" DisplayMemberBinding="{Binding Null}"/>
+                        <GridViewColumn Header="Кол-во департаментов" DisplayMemberBinding="{Binding CountDepartment}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -51,6 +51,9 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <ListView x:Name="ListPersons"
+                      HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch"
+                      VerticalAlignment="Stretch"
                       Grid.Row="1"
                       Margin="5" 
                       >
@@ -87,13 +90,13 @@
                          Grid.Column="0"
                          Grid.Row="1"
                          Margin="5" SelectionChanged="DepartmentsInDepartment_SelectionChanged">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock>
-
-                            </TextBlock>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Название" DisplayMemberBinding="{Binding DepartmentName}" />
+                            <GridViewColumn Header="Кол-во сотрудников" DisplayMemberBinding="{Binding CountPerson}" Width="75"/>
+                            <GridViewColumn Header="Кол-во департаментов" DisplayMemberBinding="{Binding CountDepartment}"/>
+                        </GridView>
+                    </ListView.View>
                 </ListView>
                 <TextBlock Grid.Column="1"
                            Grid.Row="0"
@@ -110,10 +113,10 @@
                           HorizontalAlignment="Stretch">
                     <ListView.View >
                         <GridView>
-                            <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" Width="50"/>
-                            <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}" Width="50"/>
-                            <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Proffesion}" Width="50"/>
-                            <GridViewColumn Header="З.П." DisplayMemberBinding="{Binding Salary}" Width="50"/>
+                            <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" />
+                            <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}" />
+                            <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Profession}" />
+                            <GridViewColumn Header="З.П." DisplayMemberBinding="{Binding Salary}" />
                         </GridView>
                     </ListView.View>
                 </ListView>
