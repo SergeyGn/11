@@ -169,7 +169,7 @@ namespace _11_InfoAboutDepartment
             if (Profession.Text == "рабочий")
             {
                 CountDay.IsEnabled = true;
-                ValueSlider.Text = ((int)CountDay.Value).ToString(); // чтобы поле не было пустым после назначение комбобоксом рабочего
+                ValueSlider.Text = ((int)CountDay.Value).ToString(); // чтобы поле не было пустым после назначение рабочего в комбобоксе
             }
             else
             {

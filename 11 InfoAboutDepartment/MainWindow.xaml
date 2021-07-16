@@ -110,7 +110,8 @@
                          Grid.Row="1"
                          Margin="5"
                           FontSize="9"
-                          HorizontalAlignment="Stretch">
+                          HorizontalAlignment="Stretch" 
+                          SelectionChanged="PersonsInDepartment_SelectionChanged">
                     <ListView.View >
                         <GridView>
                             <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" />

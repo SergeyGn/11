@@ -26,6 +26,8 @@ namespace _11_InfoAboutDepartment
     {
 
         public static Department MainDepartment = new Department("mainDepartment");
+        public Person CurrentPerson;
+        public Department CurrentDepartment;
 
         public MainWindow()
         {
@@ -65,6 +67,8 @@ namespace _11_InfoAboutDepartment
            currentDep = ListDepartments.SelectedItem as Department;
            ListPersons.ItemsSource = currentDep.Persons;
            DepartmentsInDepartment.ItemsSource = currentDep.Departments;
+
+            CurrentDepartment = currentDep;
         }
 
         private void DepartmentsInDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -72,6 +76,13 @@ namespace _11_InfoAboutDepartment
             Department currentDep = new Department();
             currentDep = DepartmentsInDepartment.SelectedItem as Department;
             PersonsInDepartment.ItemsSource = currentDep.Persons;
+
+            CurrentDepartment = currentDep;
+        }
+
+        private void PersonsInDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CurrentPerson = PersonsInDepartment.SelectedItem as Person;
         }
 
         private void RefreshMainWindow()
@@ -81,6 +92,8 @@ namespace _11_InfoAboutDepartment
             ListPersons.Items.Refresh();
             PersonsInDepartment.Items.Refresh();
         }
+
+
     }
 
 }
