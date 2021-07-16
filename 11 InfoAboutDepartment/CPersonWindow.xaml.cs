@@ -163,5 +163,19 @@ namespace _11_InfoAboutDepartment
             DateEmployment.Text = "";
             DateEmployment.Foreground = Brushes.Black;
         }
+
+        private void Profession_DropDownClosed(object sender, EventArgs e)
+        {
+            if (Profession.Text == "рабочий")
+            {
+                CountDay.IsEnabled = true;
+                ValueSlider.Text = ((int)CountDay.Value).ToString(); // чтобы поле не было пустым после назначение комбобоксом рабочего
+            }
+            else
+            {
+                CountDay.IsEnabled = false;
+                ValueSlider.Text = "";
+            }
+        }
     }
 }

@@ -99,7 +99,8 @@
         <ComboBox x:Name="Profession"
                     Grid.Column="1"
                     Grid.Row="5"
-                     Margin="4"/>
+                     Margin="4"
+                  DropDownClosed="Profession_DropDownClosed"/>
        
         <TextBlock 
                 Grid.Column="0"
@@ -119,14 +120,17 @@
 
             <Slider x:Name="CountDay"
                     Grid.Column="0"
-                    Margin="3,10" ValueChanged="CountDay_ValueChanged"
+                    Margin="3,10"
+                    IsEnabled="False"
+                    Value="0" ValueChanged="CountDay_ValueChanged"
                     />
            
             <TextBox x:Name="ValueSlider"
                      Grid.Column="1"
                      TextAlignment="Center"
                      HorizontalAlignment="Center"
-                     VerticalAlignment="Center"/>
+                     VerticalAlignment="Center"
+                     />
         </Grid>
         <TextBlock x:Name="InfoPanel"
                    Foreground="Red"

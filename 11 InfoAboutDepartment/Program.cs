@@ -15,16 +15,19 @@ namespace _11_InfoAboutDepartment
 
         public static void Save(Department dep)
         {
-
-            string json = JsonConvert.SerializeObject(dep);
+            var jss = new JsonSerializerSettings();
+            jss.TypeNameHandling = TypeNameHandling.All;
+            string json = JsonConvert.SerializeObject(dep,jss);
             File.WriteAllText(path, json);
 
         }
         public static Department  Load()
         {
             Department dep = new Department();
+            var jss = new JsonSerializerSettings();
+            jss.TypeNameHandling = TypeNameHandling.All;
             string json = File.ReadAllText(path);
-            dep=JsonConvert.DeserializeObject<Department>(json);//как сделать?
+            dep=JsonConvert.DeserializeObject<Department>(json,jss);
             return dep;
         }
 

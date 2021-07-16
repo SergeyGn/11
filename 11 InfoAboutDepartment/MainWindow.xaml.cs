@@ -29,10 +29,10 @@ namespace _11_InfoAboutDepartment
 
         public MainWindow()
         {
-            //if (File.Exists(Program.path))
-            //{
-            //   MainDepartment= Program.Load();
-            //}
+            if (File.Exists(Program.path))
+            {
+                MainDepartment = Program.Load();
+            }
 
             InitializeComponent();
             ListDepartments.ItemsSource = MainDepartment.Departments;

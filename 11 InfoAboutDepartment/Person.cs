@@ -17,15 +17,15 @@ namespace _11_InfoAboutDepartment
         private double _salary;
         private string _profession;
 
-        protected string FirstName { get => _firstName; set => _firstName = value; }
-        protected string LastName { get => _lastName; set => _lastName = value; }
-        protected DateTime DateBirthDay { get => date; set => date = value; }
-        protected DateTime DateStartWork { get => _dateStartWork; set => _dateStartWork = value; }
-        protected int Experience { get => _experience; set => _experience = value; }
-        protected string NameDepartment { get => _nameDepartment; set => _nameDepartment = value; }
-        protected double Salary { get => _salary; set => _salary = value; }
-        protected int CountYearsPerson { get; set; }
-        protected string Profession { get => _profession; set => _profession = value; }
+        public string FirstName { get => _firstName; set => _firstName = value; }
+        public string LastName { get => _lastName; set => _lastName = value; }
+        public DateTime DateBirthDay { get => date; set => date = value; }
+        public DateTime DateStartWork { get => _dateStartWork; set => _dateStartWork = value; }
+        public int Experience { get => _experience; set => _experience = value; }
+        public string NameDepartment { get => _nameDepartment; set => _nameDepartment = value; }
+        public double Salary { get => _salary; set => _salary = value; }
+        public int CountYearsPerson { get; set; }
+        public string Profession { get => _profession; set => _profession = value; }
 
         public Person(string FirstName,string LastName,DateTime DateBirthDay,DateTime DateStartWork,string NameDepartment, string Profession)
         {
