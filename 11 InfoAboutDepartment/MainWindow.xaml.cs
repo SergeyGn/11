@@ -26,8 +26,8 @@ namespace _11_InfoAboutDepartment
     {
 
         public static Department MainDepartment = new Department("mainDepartment");
-        public Person CurrentPerson;
-        public Department CurrentDepartment;
+        public static Person CurrentPerson;
+        public static Department CurrentDepartment;
 
         public MainWindow()
         {
@@ -93,7 +93,31 @@ namespace _11_InfoAboutDepartment
             PersonsInDepartment.Items.Refresh();
         }
 
+        private void ListPersons_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CurrentPerson = ListPersons.SelectedItem as Person;
+        }
 
+        private void EditPerson_Click(object sender, RoutedEventArgs e)
+        {
+            CPersonWindow EditPersonWindow = new CPersonWindow();
+            EditPersonWindow.Owner = this;
+            EditPersonWindow.Title = "Edit Person";
+            EditPersonWindow.FirstName.Text = CurrentPerson.FirstName;
+            EditPersonWindow.LastName.Text = CurrentPerson.LastName;
+            EditPersonWindow.DateBirth.Text = CurrentPerson.DateBirthDay.ToShortDateString();
+            EditPersonWindow.DateEmployment.Text = CurrentPerson.DateStartWork.ToShortDateString();
+            EditPersonWindow.NameDepartment.Text = CurrentPerson.NameDepartment;
+            EditPersonWindow.Profession.Text = CurrentPerson.Profession;
+            if (CurrentPerson.Profession == "рабочий")
+            {
+                EditPersonWindow.CountDay.Value = (CurrentPerson as Employee).CountWorkingDay;
+            }
+
+            EditPersonWindow.ShowDialog();
+
+
+            RefreshMainWindow();
+        }
     }
-
 }
