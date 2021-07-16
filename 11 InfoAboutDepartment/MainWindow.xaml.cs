@@ -100,24 +100,32 @@ namespace _11_InfoAboutDepartment
 
         private void EditPerson_Click(object sender, RoutedEventArgs e)
         {
-            CPersonWindow EditPersonWindow = new CPersonWindow();
-            EditPersonWindow.Owner = this;
-            EditPersonWindow.Title = "Edit Person";
-            EditPersonWindow.FirstName.Text = CurrentPerson.FirstName;
-            EditPersonWindow.LastName.Text = CurrentPerson.LastName;
-            EditPersonWindow.DateBirth.Text = CurrentPerson.DateBirthDay.ToShortDateString();
-            EditPersonWindow.DateEmployment.Text = CurrentPerson.DateStartWork.ToShortDateString();
-            EditPersonWindow.NameDepartment.Text = CurrentPerson.NameDepartment;
-            EditPersonWindow.Profession.Text = CurrentPerson.Profession;
-            if (CurrentPerson.Profession == "рабочий")
+            if (CurrentPerson != null)
             {
-                EditPersonWindow.CountDay.Value = (CurrentPerson as Employee).CountWorkingDay;
+                CPersonWindow EditPersonWindow = new CPersonWindow();
+                EditPersonWindow.Owner = this;
+                EditPersonWindow.Title = "Edit Person";
+                EditPersonWindow.FirstName.Text = CurrentPerson.FirstName;
+                EditPersonWindow.LastName.Text = CurrentPerson.LastName;
+                EditPersonWindow.DateBirth.Text = CurrentPerson.DateBirthDay.ToShortDateString();
+                EditPersonWindow.DateEmployment.Text = CurrentPerson.DateStartWork.ToShortDateString();
+                EditPersonWindow.NameDepartment.Text = CurrentPerson.NameDepartment;
+                EditPersonWindow.Profession.Text = CurrentPerson.Profession;
+
+                if (CurrentPerson.Profession == "рабочий")
+                {
+                    EditPersonWindow.CountDay.Value = (CurrentPerson as Employee).CountWorkingDay;
+                }
+
+                EditPersonWindow.ShowDialog();
+                RefreshMainWindow();
             }
-
-            EditPersonWindow.ShowDialog();
-
-
-            RefreshMainWindow();
+            else
+            {
+                MessageBoxResult messageBox = MessageBox.Show("Выберите человека для редактирования");
+            }
         }
+
+
     }
 }
