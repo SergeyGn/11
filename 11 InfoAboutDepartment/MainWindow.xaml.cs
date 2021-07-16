@@ -105,6 +105,7 @@ namespace _11_InfoAboutDepartment
                 CPersonWindow EditPersonWindow = new CPersonWindow();
                 EditPersonWindow.Owner = this;
                 EditPersonWindow.Title = "Edit Person";
+
                 EditPersonWindow.FirstName.Text = CurrentPerson.FirstName;
                 EditPersonWindow.LastName.Text = CurrentPerson.LastName;
                 EditPersonWindow.DateBirth.Text = CurrentPerson.DateBirthDay.ToShortDateString();
@@ -126,6 +127,43 @@ namespace _11_InfoAboutDepartment
             }
         }
 
+        public static void DeleteCurrentPerson()
+        {
+            for (int i = 0; i < MainDepartment.Departments.Count; i++)
+            {
+                for (int j = 0; j < MainDepartment.Departments[i].Persons.Count; j++)
+                {
+                    if (CurrentPerson == MainDepartment.Departments[i].Persons[j])
+                    {
+                        MainDepartment.Departments[i].Persons.Remove(MainDepartment.Departments[i].Persons[j]);
+                    }
+                }
+            }
+        }
 
+        private void DeletePerson_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentPerson != null)
+            {
+                InfoPersonWindow DeletePersonWindow = new InfoPersonWindow();
+                DeletePersonWindow.Owner = this;
+                DeletePersonWindow.Title = "Delete Person";
+
+                DeletePersonWindow.FirstName.Text = CurrentPerson.FirstName;
+                DeletePersonWindow.LastName.Text = CurrentPerson.LastName;
+                DeletePersonWindow.DateBirth.Text = CurrentPerson.DateBirthDay.ToShortDateString();
+                DeletePersonWindow.DateEmployment.Text = CurrentPerson.DateStartWork.ToShortDateString();
+                DeletePersonWindow.NameDepartment.Text = CurrentPerson.NameDepartment;
+                DeletePersonWindow.Profession.Text = CurrentPerson.Profession;
+                DeletePersonWindow.Salary.Text = CurrentPerson.Salary.ToString();
+
+                DeletePersonWindow.ShowDialog();
+                RefreshMainWindow();
+            }
+            else
+            {
+                MessageBoxResult messageBox = MessageBox.Show("Выберите человека для удаления");
+            }
+        }
     }
 }

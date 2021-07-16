@@ -141,16 +141,7 @@ namespace _11_InfoAboutDepartment
             
             if(Title=="Edit Person")
             {
-                for (int i= 0; i < MainWindow.MainDepartment.Departments.Count; i++)
-                {
-                    for(int j=0; j<MainWindow.MainDepartment.Departments[i].Persons.Count;j++)
-                    {
-                        if(MainWindow.CurrentPerson == MainWindow.MainDepartment.Departments[i].Persons[j])
-                        {
-                            MainWindow.MainDepartment.Departments[i].Persons.Remove(MainWindow.MainDepartment.Departments[i].Persons[j]);
-                        }
-                    }
-                }
+                MainWindow.DeleteCurrentPerson();
             }
         }
 
