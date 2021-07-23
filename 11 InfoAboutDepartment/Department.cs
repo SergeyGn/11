@@ -36,8 +36,8 @@ namespace _11_InfoAboutDepartment
             Departments = new List<Department>();
             this.DepartmentName = DepartmentName;
 
-            CountPerson = Persons.Count;
-            CountDepartment = Departments.Count;
+            CountPerson = GetCountPerson();
+            CountDepartment = GetCountDepartment();
         }
 
         public Department(string DepartmentName, List<Person> Persons, List<Department> Departments)

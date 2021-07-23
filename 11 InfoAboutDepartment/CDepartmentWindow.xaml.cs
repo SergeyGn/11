@@ -25,17 +25,37 @@ namespace _11_InfoAboutDepartment
     public partial class CDepartmentWindow : Window
     {
         Department newDepartment;
-        List<Department> AddDepartment = new List<Department>();
+        ObservableCollection<Department> departments = new ObservableCollection<Department>();
+        ObservableCollection<Person> persons = new ObservableCollection<Person>();
+        public  Department department;
+        public List<Person> personsInCurrentDepartment;
+
         public CDepartmentWindow()
         {
-            ObservableCollection<Department> departments=new ObservableCollection<Department>();
+            department = new Department();
+            personsInCurrentDepartment = new List<Person>();
             InitializeComponent();
-         for(int i=0;i<MainWindow.MainDepartment.Departments.Count;i++)
-         {
-             departments.Add(MainWindow.MainDepartment.Departments[i]);
-         }
+
+
+
+            for (int i = 0; i < department.Departments.Count; i++) 
+            {
+                departments.Add(department.Departments[i]);
+            }
+
+
+
+            for (int i = 0; i < personsInCurrentDepartment.Count; i++) 
+            {
+                persons.Add(department.Persons[i]);
+            }
+            
+
+
+            
             ListDepartments.ItemsSource = departments;
-        }
+            PersonInDepartment.ItemsSource = persons;
+        } 
 
         private void ButtonCreateDepartmentOk_Click(object sender, RoutedEventArgs e)
         {
@@ -47,16 +67,53 @@ namespace _11_InfoAboutDepartment
             {
                 string nameDepartment = NameDepartment.Text;
 
+                List<Department> AddDepartment = new List<Department>();
+
                 for (int i = 0; i < ListDepartments.SelectedItems.Count; i++)
                 {
                     AddDepartment.Add(ListDepartments.SelectedItems[i] as Department);
-                }                   
+                }
+
+                List<Person> AddPerson = new List<Person>();
+
+                for (int i = 0; i < PersonInDepartment.SelectedItems.Count; i++)
+                {
+                    for (int j = 0; j < persons.Count; j++)
+                    {
+                        if (PersonInDepartment.SelectedItems[i] == persons[j])
+                            AddPerson.Add(persons[j]);
+                    }
+                }
+
 
                 newDepartment = new Department(nameDepartment);
                 newDepartment.Departments = AddDepartment;
+                newDepartment.Persons = AddPerson;
                 newDepartment.CountDepartment = AddDepartment.Count;
-                MainWindow.MainDepartment.Departments.Add(newDepartment);
-                Program.Save(MainWindow.MainDepartment);
+
+
+
+                if(CreateDepartmentWindow.Title == "Edit Department")
+                {
+                    for(int i=0;i<MainWindow.MainDepartment.Departments.Count;i++)
+                    {
+                        
+                        for(int j=0;j< MainWindow.MainDepartment.Departments[i].Departments.Count; j++)
+                        {
+                            MainWindow.MainDepartment.Departments[i] = newDepartment;
+                            if (MainWindow.MainDepartment.Departments[i].Departments[j]==MainWindow.CurrentDepartment)
+                            {
+                                MainWindow.MainDepartment.Departments[i].Departments[j]=newDepartment;
+                                
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MainWindow.MainDepartment.Departments.Add(newDepartment);
+                }
+                //Program.Save(MainWindow.MainDepartment);
                 Close();
             }
 

@@ -96,10 +96,12 @@ namespace _11_InfoAboutDepartment
             if (InfoPanel.Text == "идет сохранение")
             {
                 Department dep=new Department();
+
                 for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
                 {
                     if (MainWindow.MainDepartment.Departments[i].DepartmentName == nameDepartment)
                     {
+                        MainWindow.MainDepartment.Departments[i].CountPerson++;
                         dep = MainWindow.MainDepartment.Departments[i];
                         MainWindow.MainDepartment.Departments.Remove(MainWindow.MainDepartment.Departments[i]);
                         break;

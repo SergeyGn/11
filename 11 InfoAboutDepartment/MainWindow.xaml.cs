@@ -26,16 +26,22 @@ namespace _11_InfoAboutDepartment
     {
 
         public static Department MainDepartment = new Department("mainDepartment");
+        public static Department WithoutDepartment;
         public static Person CurrentPerson;
         public static Department CurrentDepartment;
 
         public MainWindow()
         {
+
             if (File.Exists(Program.path))
             {
                 MainDepartment = Program.Load();
             }
-
+            else
+            {
+                WithoutDepartment = new Department("(без департамента)");
+                MainDepartment.Departments.Add(WithoutDepartment);
+            }
             InitializeComponent();
             ListDepartments.ItemsSource = MainDepartment.Departments;
             
@@ -46,11 +52,13 @@ namespace _11_InfoAboutDepartment
         {
             CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow();
             CreateDepartmentWindow.Owner = this;
+            CreateDepartmentWindow.department = MainDepartment;
+            CreateDepartmentWindow.personsInCurrentDepartment = MainDepartment.Departments[0].Persons;
             CreateDepartmentWindow.ShowDialog();
 
             RefreshMainWindow();
         }
-
+        
         private void CreatePerson_Click(object sender, RoutedEventArgs e)
         {
             CPersonWindow CreatePersonWindow = new CPersonWindow();
@@ -65,6 +73,10 @@ namespace _11_InfoAboutDepartment
         {
            Department currentDep = new Department();
            currentDep = ListDepartments.SelectedItem as Department;
+            if(currentDep==null)
+            {
+                currentDep = MainDepartment.Departments[0];
+            }
            ListPersons.ItemsSource = currentDep.Persons;
            DepartmentsInDepartment.ItemsSource = currentDep.Departments;
 
@@ -136,6 +148,7 @@ namespace _11_InfoAboutDepartment
                     if (CurrentPerson == MainDepartment.Departments[i].Persons[j])
                     {
                         MainDepartment.Departments[i].Persons.Remove(MainDepartment.Departments[i].Persons[j]);
+                        MainDepartment.Departments[i].CountPerson--;
                     }
                 }
             }
@@ -164,6 +177,22 @@ namespace _11_InfoAboutDepartment
             {
                 MessageBoxResult messageBox = MessageBox.Show("Выберите человека для удаления");
             }
+        }
+
+        private void EditDepartment_Click(object sender, RoutedEventArgs e)
+        {
+            CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow();
+            CreateDepartmentWindow.Owner = this;
+            CreateDepartmentWindow.Title = "Edit Department";
+            CreateDepartmentWindow.department = CurrentDepartment;
+            CreateDepartmentWindow.personsInCurrentDepartment = CurrentDepartment.Persons;
+            CreateDepartmentWindow.ListDepartments.SelectAll();
+            CreateDepartmentWindow.PersonInDepartment.SelectAll();
+
+
+            CreateDepartmentWindow.ShowDialog();
+
+            RefreshMainWindow();
         }
     }
 }

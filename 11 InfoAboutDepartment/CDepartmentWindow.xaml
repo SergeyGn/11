@@ -78,12 +78,17 @@
                 <GridView>
                     <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" Width="100"/>
                     <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}" Width="100"/>
-                    <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Null}" Width="100"/>
+                    <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Profession}" Width="100"/>
                     <GridViewColumn Header="З.П." DisplayMemberBinding="{Binding Salary}" Width="50"/>
-                    <GridViewColumn >
-                        <DataTemplate>
-                            <CheckBox Margin="5,0" IsChecked="False"/>
-                        </DataTemplate>
+                    <GridViewColumn Header=" " >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox x:Name="CheckBoxPerson"
+                                    IsChecked="{Binding Path=IsSelected, 
+                                              RelativeSource={RelativeSource FindAncestor, 
+                                              AncestorType={x:Type ListViewItem}}}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
