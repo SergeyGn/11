@@ -9,15 +9,15 @@
         Height="450" MinHeight="450"
         Width="400" MaxWidth="400"
         x:Name="CreateDepartmentWindow">
-    <Grid Background="Aquamarine">
+    <Grid Background="#FFB1DFDF">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="17"/>
+            <RowDefinition Height="66*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid >
             <Grid.ColumnDefinitions>
@@ -38,7 +38,7 @@
                 Grid.Row="1"
                 Text="Департаменты в субординации"
             TextAlignment="Center"
-            VerticalAlignment="Center"/>
+            VerticalAlignment="Center" Height="16" Margin="0,7"/>
         <ListView x:Name="ListDepartments"
                   
             HorizontalContentAlignment="Stretch"
@@ -48,7 +48,7 @@
                  Margin="5"
                  >
             <ListView.View>
-              <GridView>
+                <GridView>
                     <GridViewColumn Header="Название" DisplayMemberBinding="{Binding DepartmentName}" />
                     <GridViewColumn Header="Кол-во сотрудников" DisplayMemberBinding="{Binding CountPerson}"/>
                     <GridViewColumn Header="Кол-во департаментов" DisplayMemberBinding="{Binding CountDepartment}"/>
@@ -62,14 +62,14 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-              </GridView>
+                </GridView>
             </ListView.View>
         </ListView>
         <TextBlock 
                 Grid.Row="3"
                 Text="Сотрудники департамента"
             TextAlignment="Center"
-            VerticalAlignment="Center"/>
+            VerticalAlignment="Center" Height="16" Margin="0,0,0,1"/>
         <ListView x:Name="PersonInDepartment"
                       Grid.Row="4"
                       Margin="5"
@@ -96,6 +96,9 @@
         <TextBlock x:Name="TextInfo"
                    Grid.Row="5"
                    Foreground="Red"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextAlignment="Center"
             />
         <Grid Grid.Row="6">
             <Grid.ColumnDefinitions>
@@ -104,12 +107,12 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="ButtonCreateDepartmentOk"
                     Grid.Column="0"
-                    Margin="30" Click="ButtonCreateDepartmentOk_Click">
+                    Margin="10" Click="ButtonCreateDepartmentOk_Click">
                 OK
             </Button>
             <Button x:Name="ButtonCreateDepartmentCencel"
                     Grid.Column="1"
-                    Margin="30" Click="ButtonCreateDepartmentCencel_Click">
+                    Margin="10" Click="ButtonCreateDepartmentCencel_Click">
                 Cencel
             </Button>
         </Grid>

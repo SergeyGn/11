@@ -37,7 +37,8 @@ namespace _11_InfoAboutDepartment
             int perInDepCount = 0;
             for (int i = 0; i < department.Departments.Count; i++) 
             {
-                if (department.Departments[i].DepartmentName != MainWindow.NameWithoutDepartment) //чтобы не показывать строчку "без департаментов"
+                //чтобы не показывать строчку "без департаментов"
+                if (department.Departments[i].DepartmentName != MainWindow.NameWithoutDepartment) 
                 {
                     departmentsList.Add(department.Departments[i]);
                     depInDepCount++;

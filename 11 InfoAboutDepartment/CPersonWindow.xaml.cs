@@ -102,10 +102,10 @@ namespace _11_InfoAboutDepartment
                     if (MainWindow.MainDepartment.Departments[i].DepartmentName == nameDepartment)
                     {
                         dep = MainWindow.MainDepartment.Departments[i];
-                        //MainWindow.MainDepartment.Departments.Remove(MainWindow.MainDepartment.Departments[i]);
                         break;
                     }
                 }
+
                 switch (Profession.Text)
                 {
                     case "интерн":
@@ -119,7 +119,7 @@ namespace _11_InfoAboutDepartment
                         break;
                     default:
                         InfoPanel.Text = "Выберите специальность";
-                        break;
+                        return;
                 }
                 dep.Persons.Add(newPerson);
                 for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
