@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:_11_InfoAboutDepartment"
         mc:Ignorable="d"
         Title="Delete person" 
-        Height="300" MinHeight="300" 
+        Height="320" MinHeight="320" 
         Width="400" MinWidth="400">
-    <Grid Background="Aquamarine">
+    <Grid Background="#FFB1DFDF">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
@@ -17,7 +17,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -48,11 +48,11 @@
         <TextBlock 
                 Grid.Column="0"
                 Grid.Row="2"
-            Text="Дата Рождения:"
+            Text="Кол-во полных лет"
             VerticalAlignment="Center"
                 TextAlignment="Center"/>
 
-        <TextBlock x:Name="DateBirth"
+        <TextBlock x:Name="YearsCount"
                     Grid.Column="1"
                     Grid.Row="2"
                      TextAlignment="Center"
@@ -62,11 +62,10 @@
         <TextBlock 
                 Grid.Column="0"
                 Grid.Row="3"
-            Text="Дата приема на работу:"
             VerticalAlignment="Center"
-                TextAlignment="Center" />
+                TextAlignment="Center" ><Run Text="Опыт работы"/><Run Text=":"/></TextBlock>
 
-        <TextBlock x:Name="DateEmployment"
+        <TextBlock x:Name="Experience"
                     Grid.Column="1"
                     Grid.Row="3"
                      TextAlignment="Center"
@@ -123,7 +122,6 @@
                    HorizontalAlignment="Stretch"
                    VerticalAlignment="Stretch"
                    TextAlignment="Center"
-                   Text="Вы действительно хотите удалить этого человека?"
                    />
 
         <Button x:Name="ButtonCreatePersonOk"

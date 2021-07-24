@@ -22,6 +22,14 @@ namespace _11_InfoAboutDepartment
         public InfoPersonWindow()
         {
             InitializeComponent();
+
+            FirstName.Text = MainWindow.CurrentPerson.FirstName;
+            LastName.Text = MainWindow.CurrentPerson.LastName;
+            YearsCount.Text = MainWindow.CurrentPerson.CountYearsPerson.ToString();
+            Experience.Text = MainWindow.CurrentPerson.Experience.ToString();
+            NameDepartment.Text = MainWindow.CurrentPerson.NameDepartment;
+            Profession.Text = MainWindow.CurrentPerson.Profession;
+            Salary.Text = MainWindow.CurrentPerson.Salary.ToString();
         }
 
         private void ButtonInfoPersonOk_Click(object sender, RoutedEventArgs e)

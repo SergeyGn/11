@@ -162,15 +162,7 @@ namespace _11_InfoAboutDepartment
                 InfoPersonWindow DeletePersonWindow = new InfoPersonWindow();
                 DeletePersonWindow.Owner = this;
                 DeletePersonWindow.Title = "Delete Person";
-
-                DeletePersonWindow.FirstName.Text = CurrentPerson.FirstName;
-                DeletePersonWindow.LastName.Text = CurrentPerson.LastName;
-                DeletePersonWindow.DateBirth.Text = CurrentPerson.DateBirthDay.ToShortDateString();
-                DeletePersonWindow.DateEmployment.Text = CurrentPerson.DateStartWork.ToShortDateString();
-                DeletePersonWindow.NameDepartment.Text = CurrentPerson.NameDepartment;
-                DeletePersonWindow.Profession.Text = CurrentPerson.Profession;
-                DeletePersonWindow.Salary.Text = CurrentPerson.Salary.ToString();
-
+                DeletePersonWindow.InfoPanel.Text = "Удалить сотрудника?";
                 DeletePersonWindow.ShowDialog();
                 RefreshMainWindow();
             }
