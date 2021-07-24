@@ -25,36 +25,37 @@ namespace _11_InfoAboutDepartment
     public partial class CDepartmentWindow : Window
     {
         Department newDepartment;
-        ObservableCollection<Department> departments = new ObservableCollection<Department>();
-        ObservableCollection<Person> persons = new ObservableCollection<Person>();
-        public  Department department;
-        public List<Person> personsInCurrentDepartment;
+        ObservableCollection<Department> departmentsList = new ObservableCollection<Department>();
+        ObservableCollection<Person> personsList = new ObservableCollection<Person>();
 
-        public CDepartmentWindow()
+
+        public CDepartmentWindow(Department department, List<Person> persons)
         {
-            department = new Department();
-            personsInCurrentDepartment = new List<Person>();
+
             InitializeComponent();
 
 
 
             for (int i = 0; i < department.Departments.Count; i++) 
             {
-                departments.Add(department.Departments[i]);
+                if (department.Departments[i].DepartmentName != MainWindow.NameWithoutDepartment) //чтобы не показывать строчку "без департаментов"
+                {
+                    departmentsList.Add(department.Departments[i]);
+                }
             }
 
 
 
-            for (int i = 0; i < personsInCurrentDepartment.Count; i++) 
+            for (int i = 0; i < persons.Count; i++) 
             {
-                persons.Add(department.Persons[i]);
+                personsList.Add(persons[i]);
             }
             
 
 
             
-            ListDepartments.ItemsSource = departments;
-            PersonInDepartment.ItemsSource = persons;
+            ListDepartments.ItemsSource = departmentsList;
+            PersonInDepartment.ItemsSource = personsList;
         } 
 
         private void ButtonCreateDepartmentOk_Click(object sender, RoutedEventArgs e)
@@ -78,10 +79,10 @@ namespace _11_InfoAboutDepartment
 
                 for (int i = 0; i < PersonInDepartment.SelectedItems.Count; i++)
                 {
-                    for (int j = 0; j < persons.Count; j++)
+                    for (int j = 0; j < personsList.Count; j++)
                     {
-                        if (PersonInDepartment.SelectedItems[i] == persons[j])
-                            AddPerson.Add(persons[j]);
+                        if (PersonInDepartment.SelectedItems[i] == personsList[j])
+                            AddPerson.Add(personsList[j]);
                     }
                 }
 
@@ -95,25 +96,40 @@ namespace _11_InfoAboutDepartment
 
                 if(CreateDepartmentWindow.Title == "Edit Department")
                 {
-                    for(int i=0;i<MainWindow.MainDepartment.Departments.Count;i++)
+                    for(int i=0;i<MainWindow.MainDepartment.Departments.Count;i++)                          
                     {
-                        
-                        for(int j=0;j< MainWindow.MainDepartment.Departments[i].Departments.Count; j++)
+                        if (MainWindow.MainDepartment.Departments[i] == MainWindow.CurrentDepartment)
                         {
                             MainWindow.MainDepartment.Departments[i] = newDepartment;
-                            if (MainWindow.MainDepartment.Departments[i].Departments[j]==MainWindow.CurrentDepartment)
+                        }
+
+                        for (int j=0;j< MainWindow.MainDepartment.Departments[i].Departments.Count; j++)
+                        {
+
+                            if (MainWindow.MainDepartment.Departments[i].Departments[j] == MainWindow.CurrentDepartment)
                             {
-                                MainWindow.MainDepartment.Departments[i].Departments[j]=newDepartment;
-                                
+                                MainWindow.MainDepartment.Departments[i].Departments[j] = newDepartment;
+
                             }
                         }
+                    }
+
+                    //увольнение сотрудников в запас
+                    for (int i = 0; i < PersonInDepartment.Items.Count; i++)
+                    {
+                        if(PersonInDepartment.Items[i]!=PersonInDepartment.SelectedItem)
+                        {
+                            MainWindow.MainDepartment.Departments[0].Persons.Add(PersonInDepartment.Items[i] as Person);
+                            MainWindow.MainDepartment.Departments[0].CountPerson++;
+                        }
+
                     }
                 }
                 else
                 {
                     MainWindow.MainDepartment.Departments.Add(newDepartment);
                 }
-                //Program.Save(MainWindow.MainDepartment);
+                Program.Save(MainWindow.MainDepartment);
                 Close();
             }
 

@@ -24,9 +24,8 @@ namespace _11_InfoAboutDepartment
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        public static string NameWithoutDepartment = "(без департамента)";
         public static Department MainDepartment = new Department("mainDepartment");
-        public static Department WithoutDepartment;
         public static Person CurrentPerson;
         public static Department CurrentDepartment;
 
@@ -39,7 +38,7 @@ namespace _11_InfoAboutDepartment
             }
             else
             {
-                WithoutDepartment = new Department("(без департамента)");
+                Department WithoutDepartment = new Department(NameWithoutDepartment);
                 MainDepartment.Departments.Add(WithoutDepartment);
             }
             InitializeComponent();
@@ -50,10 +49,8 @@ namespace _11_InfoAboutDepartment
 
         private void CreateDepartment_Click(object sender, RoutedEventArgs e)
         {
-            CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow();
+            CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow(MainDepartment, MainDepartment.Departments[0].Persons); //MainDepartment.Departments[0].Persons - это сотрудники без департамента
             CreateDepartmentWindow.Owner = this;
-            CreateDepartmentWindow.department = MainDepartment;
-            CreateDepartmentWindow.personsInCurrentDepartment = MainDepartment.Departments[0].Persons;
             CreateDepartmentWindow.ShowDialog();
 
             RefreshMainWindow();
@@ -181,17 +178,45 @@ namespace _11_InfoAboutDepartment
 
         private void EditDepartment_Click(object sender, RoutedEventArgs e)
         {
-            CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow();
+            CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow(CurrentDepartment,CurrentDepartment.Persons);
             CreateDepartmentWindow.Owner = this;
             CreateDepartmentWindow.Title = "Edit Department";
-            CreateDepartmentWindow.department = CurrentDepartment;
-            CreateDepartmentWindow.personsInCurrentDepartment = CurrentDepartment.Persons;
+            CreateDepartmentWindow.NameDepartment.Text = CurrentDepartment.DepartmentName;
             CreateDepartmentWindow.ListDepartments.SelectAll();
             CreateDepartmentWindow.PersonInDepartment.SelectAll();
-
-
             CreateDepartmentWindow.ShowDialog();
+            RefreshMainWindow();
+        }
 
+        private void DeleteDepartment_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
+            {
+
+                if (MainWindow.MainDepartment.Departments[i].Departments.Count > 0)
+                {
+                    for (int j = 0; j < MainWindow.MainDepartment.Departments[i].Departments.Count; j++)
+                    {
+
+                        if (MainDepartment.Departments[i].Departments[j] == CurrentDepartment)
+                        {
+                            MainDepartment.Departments[i].Departments.Remove(MainDepartment.Departments[i].Departments[j]);
+
+                        }
+                    }
+                }
+                if (MainDepartment.Departments[i] == CurrentDepartment)
+                {
+                    MainDepartment.Departments.Remove(MainDepartment.Departments[i]);
+                }
+            }
+
+            //увольнение сотрудников в запас т.е. отправление в депратамент "без деп"
+            for (int i = 0; i < CurrentDepartment.Persons.Count; i++)
+            {
+                MainDepartment.Departments[0].Persons.Add(CurrentDepartment.Persons[i]);
+                MainDepartment.Departments[0].CountPerson++;
+            }
             RefreshMainWindow();
         }
     }
