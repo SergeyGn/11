@@ -182,58 +182,72 @@ namespace _11_InfoAboutDepartment
 
         private void EditDepartment_Click(object sender, RoutedEventArgs e)
         {
-            CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow(CurrentDepartment,CurrentDepartment.Persons);
-            CreateDepartmentWindow.Owner = this;
-            CreateDepartmentWindow.Title = "Edit Department";
-            CreateDepartmentWindow.NameDepartment.Text = CurrentDepartment.DepartmentName;
+            if (CurrentDepartment == null)
+            {
+                MessageBoxResult messageBox = MessageBox.Show("Выберите департамент для редактирования");
+            }
+            else
+            {
+                CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow(CurrentDepartment, CurrentDepartment.Persons);
+                CreateDepartmentWindow.Owner = this;
+                CreateDepartmentWindow.Title = "Edit Department";
+                CreateDepartmentWindow.NameDepartment.Text = CurrentDepartment.DepartmentName;
 
-            CreateDepartmentWindow.ShowDialog();
-            RefreshMainWindow();
+                CreateDepartmentWindow.ShowDialog();
+                RefreshMainWindow();
+            }
         }
 
         private void DeleteDepartment_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
+            if (CurrentDepartment == null)
             {
-
-                if (MainWindow.MainDepartment.Departments[i].Departments.Count > 0)
+                MessageBoxResult messageBox = MessageBox.Show("Выберите департамент для удаления");
+            }
+            else
+            {
+                for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
                 {
-                    for (int j = 0; j < MainWindow.MainDepartment.Departments[i].Departments.Count; j++)
-                    {
-                        if(MainDepartment.Departments[i].Departments[j].MainDepartmentName==CurrentDepartment.DepartmentName)
-                        {
-                            //все департаменты у которых главный был удален, носят статус "без деп" т.е. свободных
-                            MainDepartment.Departments[i].Departments[j].MainDepartmentName = NameWithoutDepartment;
-                            MainDepartment.Departments[i].Departments[j].IsMainDepartment = false;
-                        }
-                        
-                        if (MainDepartment.Departments[i].Departments[j] == CurrentDepartment)
-                        {
-                            MainDepartment.Departments[i].Departments.Remove(MainDepartment.Departments[i].Departments[j]);
 
+                    if (MainWindow.MainDepartment.Departments[i].Departments.Count > 0)
+                    {
+                        for (int j = 0; j < MainWindow.MainDepartment.Departments[i].Departments.Count; j++)
+                        {
+                            if (MainDepartment.Departments[i].Departments[j].MainDepartmentName == CurrentDepartment.DepartmentName)
+                            {
+                                //все департаменты у которых главный был удален, носят статус "без деп" т.е. свободных
+                                MainDepartment.Departments[i].Departments[j].MainDepartmentName = NameWithoutDepartment;
+                                MainDepartment.Departments[i].Departments[j].IsMainDepartment = false;
+                            }
+
+                            if (MainDepartment.Departments[i].Departments[j] == CurrentDepartment)
+                            {
+                                MainDepartment.Departments[i].Departments.Remove(MainDepartment.Departments[i].Departments[j]);
+
+                            }
                         }
                     }
+                    if (MainDepartment.Departments[i] == CurrentDepartment)
+                    {
+                        MainDepartment.Departments.Remove(MainDepartment.Departments[i]);
+                    }
+                    if (MainDepartment.Departments[i].MainDepartmentName == CurrentDepartment.DepartmentName)
+                    {
+                        //все департаменты у которых главный был удален, носят статус "без деп" т.е. свободных
+                        MainDepartment.Departments[i].MainDepartmentName = NameWithoutDepartment;
+                        MainDepartment.Departments[i].IsMainDepartment = false;
+                    }
                 }
-                if (MainDepartment.Departments[i] == CurrentDepartment)
-                {
-                    MainDepartment.Departments.Remove(MainDepartment.Departments[i]);
-                }
-                if (MainDepartment.Departments[i].MainDepartmentName == CurrentDepartment.DepartmentName)
-                {
-                    //все департаменты у которых главный был удален, носят статус "без деп" т.е. свободных
-                    MainDepartment.Departments[i].MainDepartmentName = NameWithoutDepartment;
-                    MainDepartment.Departments[i].IsMainDepartment = false;
-                }
-            }
 
-            //увольнение сотрудников в запас т.е. отправление в депратамент "без деп"
-            for (int i = 0; i < CurrentDepartment.Persons.Count; i++)
-            {
-                CurrentDepartment.Persons[i].NameDepartment = MainDepartment.Departments[0].DepartmentName;
-                MainDepartment.Departments[0].Persons.Add(CurrentDepartment.Persons[i]);
-                MainDepartment.Departments[0].CountPerson++;
+                //увольнение сотрудников в запас т.е. отправление в депратамент "без деп"
+                for (int i = 0; i < CurrentDepartment.Persons.Count; i++)
+                {
+                    CurrentDepartment.Persons[i].NameDepartment = MainDepartment.Departments[0].DepartmentName;
+                    MainDepartment.Departments[0].Persons.Add(CurrentDepartment.Persons[i]);
+                    MainDepartment.Departments[0].CountPerson++;
+                }
+                RefreshMainWindow();
             }
-            RefreshMainWindow();
         }
     }
 }
