@@ -33,23 +33,47 @@ namespace _11_InfoAboutDepartment
         {
             InitializeComponent();
 
+            int depInDepCount = 0;
+            int perInDepCount = 0;
             for (int i = 0; i < department.Departments.Count; i++) 
             {
                 if (department.Departments[i].DepartmentName != MainWindow.NameWithoutDepartment) //чтобы не показывать строчку "без департаментов"
                 {
                     departmentsList.Add(department.Departments[i]);
+                    depInDepCount++;
                 }
             }
+
+                for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
+                {
+                    //чтобы нельзя было добавить этот же департамент
+                    if (MainWindow.MainDepartment.Departments[i].DepartmentName != MainWindow.CurrentDepartment.DepartmentName)
+                    {
+                      //чтобы нельзя было добавлять департамент которые во главе текущего департамента
+                      if(MainWindow.MainDepartment.Departments[i].DepartmentName!= MainWindow.CurrentDepartment.MainDepartmentName)
+                        //чтобы нельзя было добавлять департаменты у которых уже есть главный департамент
+                        if (MainWindow.MainDepartment.Departments[i].IsMainDepartment == false)
+                        {
+                            departmentsList.Add(MainWindow.MainDepartment.Departments[i]);
+                        }
+                    }
+                }
 
             for (int i = 0; i < persons.Count; i++) 
             {
                 personsList.Add(persons[i]);
+                perInDepCount++;
             }
             
 
 
             
             ListDepartments.ItemsSource = departmentsList;
+            for(int i=0;i<depInDepCount;i++)                             //выделяем департаменты которые есть уже в субординации
+            {
+                ListDepartments.SelectedItem = ListDepartments.Items[i];
+            }    
+            CreateDepartmentWindow.PersonInDepartment.SelectAll();
             PersonInDepartment.ItemsSource = personsList;
         } 
 
@@ -68,7 +92,10 @@ namespace _11_InfoAboutDepartment
 
                 for (int i = 0; i < ListDepartments.SelectedItems.Count; i++)
                 {
-                    AddDepartment.Add(ListDepartments.SelectedItems[i] as Department);
+                    Department dep = ListDepartments.SelectedItems[i] as Department;
+                    dep.IsMainDepartment = true;
+                    dep.MainDepartmentName = MainWindow.CurrentDepartment.DepartmentName;
+                    AddDepartment.Add(dep);
                 }
 
                 List<Person> AddPerson = new List<Person>();
@@ -79,6 +106,7 @@ namespace _11_InfoAboutDepartment
                     {
                         if (PersonInDepartment.SelectedItems[i] == personsList[j])
                         {
+                            personsList[j].NameDepartment = nameDepartment;
                             AddPerson.Add(personsList[j]);
 
                         }

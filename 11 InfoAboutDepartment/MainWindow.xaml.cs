@@ -39,7 +39,9 @@ namespace _11_InfoAboutDepartment
             else
             {
                 Department WithoutDepartment = new Department(NameWithoutDepartment);
+                WithoutDepartment.IsMainDepartment = true;
                 MainDepartment.Departments.Add(WithoutDepartment);
+
             }
             InitializeComponent();
             ListDepartments.ItemsSource = MainDepartment.Departments;
@@ -49,7 +51,9 @@ namespace _11_InfoAboutDepartment
 
         private void CreateDepartment_Click(object sender, RoutedEventArgs e)
         {
-            CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow(MainDepartment, MainDepartment.Departments[0].Persons); //MainDepartment.Departments[0].Persons - это сотрудники без деп.
+            CurrentDepartment = MainDepartment.Departments[0];
+            CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow(MainDepartment.Departments[0], MainDepartment.Departments[0].Persons); //MainDepartment.Departments[0].Persons - это сотрудники без деп.
+            
             CreateDepartmentWindow.Owner = this;
             CreateDepartmentWindow.ShowDialog();
 
@@ -182,8 +186,7 @@ namespace _11_InfoAboutDepartment
             CreateDepartmentWindow.Owner = this;
             CreateDepartmentWindow.Title = "Edit Department";
             CreateDepartmentWindow.NameDepartment.Text = CurrentDepartment.DepartmentName;
-            CreateDepartmentWindow.ListDepartments.SelectAll();
-            CreateDepartmentWindow.PersonInDepartment.SelectAll();
+
             CreateDepartmentWindow.ShowDialog();
             RefreshMainWindow();
         }
@@ -197,7 +200,13 @@ namespace _11_InfoAboutDepartment
                 {
                     for (int j = 0; j < MainWindow.MainDepartment.Departments[i].Departments.Count; j++)
                     {
-
+                        if(MainDepartment.Departments[i].Departments[j].MainDepartmentName==CurrentDepartment.DepartmentName)
+                        {
+                            //все департаменты у которых главный был удален, носят статус "без деп" т.е. свободных
+                            MainDepartment.Departments[i].Departments[j].MainDepartmentName = NameWithoutDepartment;
+                            MainDepartment.Departments[i].Departments[j].IsMainDepartment = false;
+                        }
+                        
                         if (MainDepartment.Departments[i].Departments[j] == CurrentDepartment)
                         {
                             MainDepartment.Departments[i].Departments.Remove(MainDepartment.Departments[i].Departments[j]);
@@ -209,11 +218,18 @@ namespace _11_InfoAboutDepartment
                 {
                     MainDepartment.Departments.Remove(MainDepartment.Departments[i]);
                 }
+                if (MainDepartment.Departments[i].MainDepartmentName == CurrentDepartment.DepartmentName)
+                {
+                    //все департаменты у которых главный был удален, носят статус "без деп" т.е. свободных
+                    MainDepartment.Departments[i].MainDepartmentName = NameWithoutDepartment;
+                    MainDepartment.Departments[i].IsMainDepartment = false;
+                }
             }
 
             //увольнение сотрудников в запас т.е. отправление в депратамент "без деп"
             for (int i = 0; i < CurrentDepartment.Persons.Count; i++)
             {
+                CurrentDepartment.Persons[i].NameDepartment = MainDepartment.Departments[0].DepartmentName;
                 MainDepartment.Departments[0].Persons.Add(CurrentDepartment.Persons[i]);
                 MainDepartment.Departments[0].CountPerson++;
             }

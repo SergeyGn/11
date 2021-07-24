@@ -25,7 +25,11 @@ namespace _11_InfoAboutDepartment
         /// кол-во сотрудников в департаменте
         /// </summary>
         private int _countPerson;
-
+        /// <summary>
+        /// есть ли департамент которому этот департамент подчиняется
+        /// </summary>
+        private bool _isMainDepartment;
+        private string _mainDepartmentName;
         public Department(string DepartmentName)
         {
             Persons = new List<Person>();
@@ -68,5 +72,7 @@ namespace _11_InfoAboutDepartment
         public List<Person> Persons { get => _persons; set => _persons = value; }
         public int CountDepartment { get => _countDepartment; set => _countDepartment = value; }
         public int CountPerson { get => _countPerson; set => _countPerson = value; }
+        public bool IsMainDepartment { get => _isMainDepartment; set => _isMainDepartment = value; }
+        public string MainDepartmentName { get => _mainDepartmentName; set => _mainDepartmentName = value; }
     }
 }
