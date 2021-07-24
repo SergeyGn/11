@@ -39,7 +39,6 @@ namespace _11_InfoAboutDepartment
 
             CountYearsPerson = GetCountYears(DateBirthDay);
             Experience = GetCountYears(DateStartWork);
-            Salary = GetSalary();
         }
 
         public int GetCountYears(DateTime date)

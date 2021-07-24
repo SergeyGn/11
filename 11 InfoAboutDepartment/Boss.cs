@@ -28,7 +28,7 @@ namespace _11_InfoAboutDepartment
         public override double GetSalary()
         {
             double dilaryAllWorkersDepartment=0;
-            Department = new Department();
+
             for(int i=0; i<Department.Persons.Count;i++) //перечисляем всех сотрудников в департаменте начальника
             {
                 dilaryAllWorkersDepartment += Department.Persons[i].GetSalary();

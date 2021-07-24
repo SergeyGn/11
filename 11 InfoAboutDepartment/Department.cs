@@ -25,10 +25,6 @@ namespace _11_InfoAboutDepartment
         /// кол-во сотрудников в департаменте
         /// </summary>
         private int _countPerson;
-        /// <summary>
-        /// начальник департамента
-        /// </summary>
-        private Person _bossDepartment;
 
         public Department(string DepartmentName)
         {
@@ -72,6 +68,5 @@ namespace _11_InfoAboutDepartment
         public List<Person> Persons { get => _persons; set => _persons = value; }
         public int CountDepartment { get => _countDepartment; set => _countDepartment = value; }
         public int CountPerson { get => _countPerson; set => _countPerson = value; }
-        public Person BossDepartment { get => _bossDepartment; set => _bossDepartment = value; }
     }
 }

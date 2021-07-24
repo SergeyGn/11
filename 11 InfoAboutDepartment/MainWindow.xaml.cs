@@ -49,7 +49,7 @@ namespace _11_InfoAboutDepartment
 
         private void CreateDepartment_Click(object sender, RoutedEventArgs e)
         {
-            CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow(MainDepartment, MainDepartment.Departments[0].Persons); //MainDepartment.Departments[0].Persons - это сотрудники без департамента
+            CDepartmentWindow CreateDepartmentWindow = new CDepartmentWindow(MainDepartment, MainDepartment.Departments[0].Persons); //MainDepartment.Departments[0].Persons - это сотрудники без деп.
             CreateDepartmentWindow.Owner = this;
             CreateDepartmentWindow.ShowDialog();
 

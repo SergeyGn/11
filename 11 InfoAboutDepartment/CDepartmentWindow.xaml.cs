@@ -31,10 +31,7 @@ namespace _11_InfoAboutDepartment
 
         public CDepartmentWindow(Department department, List<Person> persons)
         {
-
             InitializeComponent();
-
-
 
             for (int i = 0; i < department.Departments.Count; i++) 
             {
@@ -43,8 +40,6 @@ namespace _11_InfoAboutDepartment
                     departmentsList.Add(department.Departments[i]);
                 }
             }
-
-
 
             for (int i = 0; i < persons.Count; i++) 
             {
@@ -70,6 +65,7 @@ namespace _11_InfoAboutDepartment
 
                 List<Department> AddDepartment = new List<Department>();
 
+
                 for (int i = 0; i < ListDepartments.SelectedItems.Count; i++)
                 {
                     AddDepartment.Add(ListDepartments.SelectedItems[i] as Department);
@@ -82,7 +78,10 @@ namespace _11_InfoAboutDepartment
                     for (int j = 0; j < personsList.Count; j++)
                     {
                         if (PersonInDepartment.SelectedItems[i] == personsList[j])
+                        {
                             AddPerson.Add(personsList[j]);
+
+                        }
                     }
                 }
 
@@ -91,6 +90,7 @@ namespace _11_InfoAboutDepartment
                 newDepartment.Departments = AddDepartment;
                 newDepartment.Persons = AddPerson;
                 newDepartment.CountDepartment = AddDepartment.Count;
+                newDepartment.CountPerson = AddPerson.Count;
 
 
 

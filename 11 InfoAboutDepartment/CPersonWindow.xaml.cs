@@ -48,7 +48,7 @@ namespace _11_InfoAboutDepartment
             DateTime dateBirth=DateTime.MinValue;
             DateTime dateEmployment=DateTime.MinValue;
             string nameDepartment="";
-            Person newPerson;
+            Person newPerson=new Intern("","",DateTime.Now,DateTime.Now,"");
             if (LastName.Text != "")
             {
                 if (FirstName.Text != "")
@@ -101,47 +101,50 @@ namespace _11_InfoAboutDepartment
                 {
                     if (MainWindow.MainDepartment.Departments[i].DepartmentName == nameDepartment)
                     {
-                        MainWindow.MainDepartment.Departments[i].CountPerson++;
                         dep = MainWindow.MainDepartment.Departments[i];
-                        MainWindow.MainDepartment.Departments.Remove(MainWindow.MainDepartment.Departments[i]);
+                        //MainWindow.MainDepartment.Departments.Remove(MainWindow.MainDepartment.Departments[i]);
                         break;
                     }
                 }
-
                 switch (Profession.Text)
                 {
                     case "интерн":
-                        newPerson = new Intern(firstName,lastName,dateBirth,dateEmployment,nameDepartment);
-                        dep.Persons.Add(newPerson);
-                        MainWindow.MainDepartment.Departments.Add(dep);
-                        InfoPanel.Text = "идет сохранение";
-                        Program.Save(MainWindow.MainDepartment);
-                        Close();
+                        newPerson = new Intern(firstName, lastName, dateBirth, dateEmployment, nameDepartment);
                         break;
                     case "рабочий":
-                        newPerson = new Employee(firstName, lastName, dateBirth, dateEmployment, nameDepartment,int.Parse(ValueSlider.Text));
-                        dep.Persons.Add(newPerson);
-                        MainWindow.MainDepartment.Departments.Add(dep);
-                        InfoPanel.Text = "идет сохранение";
-                        Program.Save(MainWindow.MainDepartment);
-                        Close();
+                        newPerson = new Employee(firstName, lastName, dateBirth, dateEmployment, nameDepartment, int.Parse(ValueSlider.Text));
                         break;
                     case "начальник":
                         newPerson = new Boss(firstName, lastName, dateBirth, dateEmployment, nameDepartment, dep);
-                        dep.Persons.Add(newPerson);
-                        MainWindow.MainDepartment.Departments.Add(dep);
-                        InfoPanel.Text = "идет сохранение";
-                        Program.Save(MainWindow.MainDepartment);
-                        
-                        Close();
                         break;
                     default:
                         InfoPanel.Text = "Выберите специальность";
                         break;
                 }
+                dep.Persons.Add(newPerson);
+                for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
+                {
+                    for(int j=0;j<MainWindow.MainDepartment.Departments[i].Departments.Count; j++)
+                    {
+                        if (MainWindow.MainDepartment.Departments[i].Departments[j].DepartmentName == nameDepartment)
+                        {
+                            MainWindow.MainDepartment.Departments[i].Departments[j] = dep;
+                            MainWindow.MainDepartment.Departments[i].Departments[j].CountPerson++;
+                        }
+                    }
+                    if (MainWindow.MainDepartment.Departments[i].DepartmentName == nameDepartment)
+                    {
+                        MainWindow.MainDepartment.Departments[i] = dep;
+                        MainWindow.MainDepartment.Departments[i].CountPerson++;
+                        break;
+                    }
+                }
+                InfoPanel.Text = "идет сохранение";
+                Program.Save(MainWindow.MainDepartment);
+                Close();
             }
-            
-            if(Title=="Edit Person")
+
+            if (Title=="Edit Person")
             {
                 MainWindow.DeleteCurrentPerson();
             }
