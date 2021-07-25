@@ -174,7 +174,11 @@ namespace _11_InfoAboutDepartment
 
         private void EditDepartment_Click(object sender, RoutedEventArgs e)
         {
-            if (CurrentDepartment == null)
+            if ( CurrentDepartment == null)
+            {
+              MessageBoxResult messageBox = MessageBox.Show("Выберите департамент для редактирования");
+            }
+            else if(CurrentDepartment == MainDepartment.Departments[0])
             {
                 MessageBoxResult messageBox = MessageBox.Show("Выберите департамент для редактирования");
             }
@@ -193,6 +197,10 @@ namespace _11_InfoAboutDepartment
         private void DeleteDepartment_Click(object sender, RoutedEventArgs e)
         {
             if (CurrentDepartment == null)
+            {
+                MessageBoxResult messageBox = MessageBox.Show("Выберите департамент для удаления");
+            }
+            else if (CurrentDepartment == MainDepartment.Departments[0])
             {
                 MessageBoxResult messageBox = MessageBox.Show("Выберите департамент для удаления");
             }
