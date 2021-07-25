@@ -55,7 +55,7 @@
                       HorizontalContentAlignment="Stretch"
                       VerticalAlignment="Stretch"
                       Grid.Row="1"
-                      Margin="5" SelectionChanged="ListPersons_SelectionChanged" 
+                      Margin="5" SelectionChanged="ListPersons_SelectionChanged" MouseDoubleClick="ListPersons_MouseDoubleClick" 
                       >
                 <ListView.View>
                     <GridView>
@@ -111,7 +111,7 @@
                          Margin="5"
                           FontSize="9"
                           HorizontalAlignment="Stretch" 
-                          SelectionChanged="PersonsInDepartment_SelectionChanged">
+                          SelectionChanged="PersonsInDepartment_SelectionChanged" MouseDoubleClick="PersonsInDepartment_MouseDoubleClick">
                     <ListView.View >
                         <GridView>
                             <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" />

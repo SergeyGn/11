@@ -241,5 +241,26 @@ namespace _11_InfoAboutDepartment
                 RefreshMainWindow();
             }
         }
+
+        private void ListPersons_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            GetInfoPanelWindow();
+        }
+
+        private void PersonsInDepartment_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            GetInfoPanelWindow();
+        }
+        private void GetInfoPanelWindow()
+        {
+            InfoPersonWindow ShowPersonWindow = new InfoPersonWindow();
+            ShowPersonWindow.Owner = this;
+            ShowPersonWindow.Title = "Show Person";
+            ShowPersonWindow.ButtonCreatePersonCencel.Content = "OK";
+            ShowPersonWindow.ButtonCreatePersonOk.Visibility = Visibility.Hidden;
+
+            ShowPersonWindow.ShowDialog();
+            RefreshMainWindow();
+        }
     }
 }
