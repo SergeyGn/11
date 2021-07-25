@@ -65,17 +65,21 @@ namespace _11_InfoAboutDepartment
                 personsList.Add(persons[i]);
                 perInDepCount++;
             }
-            
-
-
-            
+            //люди без департамента
+            for(int i=0; i<MainWindow.MainDepartment.Departments[0].Persons.Count; i++)
+            {
+                personsList.Add(MainWindow.MainDepartment.Departments[0].Persons[i]);
+            }
             ListDepartments.ItemsSource = departmentsList;
             for(int i=0;i<depInDepCount;i++)                             //выделяем департаменты которые есть уже в субординации
             {
                 ListDepartments.SelectedItem = ListDepartments.Items[i];
-            }    
-            CreateDepartmentWindow.PersonInDepartment.SelectAll();
+            }            
             PersonInDepartment.ItemsSource = personsList;
+            for (int i = 0; i < perInDepCount; i++)                             //выделяем людей которые есть уже в субординации
+            {
+                PersonInDepartment.SelectedItem = PersonInDepartment.Items[i];
+            }
         } 
 
         private void ButtonCreateDepartmentOk_Click(object sender, RoutedEventArgs e)
@@ -100,6 +104,7 @@ namespace _11_InfoAboutDepartment
                 }
 
                 List<Person> AddPerson = new List<Person>();
+                List<Person> NotAddPerson = new List<Person>();
 
                 for (int i = 0; i < PersonInDepartment.SelectedItems.Count; i++)
                 {
@@ -111,6 +116,11 @@ namespace _11_InfoAboutDepartment
                             AddPerson.Add(personsList[j]);
 
                         }
+                        else 
+                        {
+                            personsList[j].NameDepartment = MainWindow.NameWithoutDepartment;
+                            NotAddPerson.Add(personsList[j]);
+                        }
                     }
                 }
 
@@ -121,9 +131,10 @@ namespace _11_InfoAboutDepartment
                 newDepartment.CountDepartment = AddDepartment.Count;
                 newDepartment.CountPerson = AddPerson.Count;
 
+                MainWindow.MainDepartment.Departments[0].Persons = NotAddPerson; //список тех кого не выбрали;
+                MainWindow.MainDepartment.Departments[0].CountPerson = MainWindow.MainDepartment.Departments[0].Persons.Count;
 
-
-                if(CreateDepartmentWindow.Title == "Edit Department")
+                if (CreateDepartmentWindow.Title == "Edit Department")
                 {
                     for(int i=0;i<MainWindow.MainDepartment.Departments.Count;i++)                          
                     {
