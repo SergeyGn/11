@@ -17,7 +17,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid ShowGridLines="True">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="*"/>
@@ -27,16 +27,36 @@
                        VerticalAlignment="Center"
                        Text="Все департаменты:"/>
             <ListView x:Name="ListDepartments"
-            HorizontalContentAlignment="Stretch"
-            HorizontalAlignment="Stretch" 
-            VerticalAlignment="Stretch" 
+                 HorizontalContentAlignment="Stretch"
+                 HorizontalAlignment="Stretch" 
+                 VerticalAlignment="Stretch" 
                  Grid.Row="1"
-                 Margin="5" SelectionChanged="ListDepartments_SelectionChanged">
+                 Margin="5" 
+                 SelectionChanged="ListDepartments_SelectionChanged"
+                      >
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Название" DisplayMemberBinding="{Binding DepartmentName}" />
-                        <GridViewColumn Header="Кол-во сотрудников" DisplayMemberBinding="{Binding CountPerson}"/>
-                        <GridViewColumn Header="Кол-во департаментов" DisplayMemberBinding="{Binding CountDepartment}"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding DepartmentName}">
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader  Tag="DepartmentName" Click="ListDep_GridViewColumnHeader_Click" >
+                                    Название
+                                </GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn  DisplayMemberBinding="{Binding CountPerson}">
+                        <GridViewColumn.Header>
+                                <GridViewColumnHeader  Tag="CountPerson" Click="ListDep_GridViewColumnHeader_Click" >
+                                Кол-во сотрудников
+                            </GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn  DisplayMemberBinding="{Binding CountDepartment}">
+                        <GridViewColumn.Header>
+                                <GridViewColumnHeader  Tag="CountDepartment" Click="ListDep_GridViewColumnHeader_Click" >
+                                Кол-во департаментов
+                            </GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -55,14 +75,50 @@
                       HorizontalContentAlignment="Stretch"
                       VerticalAlignment="Stretch"
                       Grid.Row="1"
-                      Margin="5" SelectionChanged="ListPersons_SelectionChanged" MouseDoubleClick="ListPersons_MouseDoubleClick" 
+                      Margin="5" SelectionChanged="ListPersons_SelectionChanged" 
+                      MouseDoubleClick="ListPersons_MouseDoubleClick" 
                       >
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" Width="100"/>
-                        <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}" Width="100"/>
-                        <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Profession}" Width="100"/>
-                        <GridViewColumn Header="З.П." DisplayMemberBinding="{Binding Salary}" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding FirstName}"  Width="100">
+                            <GridViewColumn.Header >
+                                <GridViewColumnHeader 
+                                        Tag="FirstName" 
+                                        Click="ListPerson_GridViewColumnHeader_Click">
+                                    Имя
+                                </GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn  DisplayMemberBinding="{Binding LastName}" Width="100">
+                            <GridViewColumn.Header >
+                                <GridViewColumnHeader 
+                                        Tag="FirstName" 
+                                        Click="ListPerson_GridViewColumnHeader_Click" >
+                                    Фамилия
+                                </GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Profession}" Width="100" >
+                            <GridViewColumn.Header >
+                                <GridViewColumnHeader 
+                                        Tag="Profession" 
+                                        Click="ListPerson_GridViewColumnHeader_Click" 
+                                        >
+                                    Специальность
+                                </GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Salary}" Width="80" >
+                            <GridViewColumn.Header >
+                                <GridViewColumnHeader 
+                                        Tag="Salary" 
+                                        Click="ListPerson_GridViewColumnHeader_Click"
+                                        >
+                                    З.П.
+                                </GridViewColumnHeader>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -89,12 +145,40 @@
                 <ListView x:Name="DepartmentsInDepartment"
                          Grid.Column="0"
                          Grid.Row="1"
-                         Margin="5" SelectionChanged="DepartmentsInDepartment_SelectionChanged">
+                         Margin="5" 
+                         SelectionChanged="DepartmentsInDepartment_SelectionChanged">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Название" DisplayMemberBinding="{Binding DepartmentName}" />
-                            <GridViewColumn Header="Кол-во сотрудников" DisplayMemberBinding="{Binding CountPerson}" Width="75"/>
-                            <GridViewColumn Header="Кол-во департаментов" DisplayMemberBinding="{Binding CountDepartment}"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding DepartmentName}" Width="60">
+                                <GridViewColumn.Header>
+                                    <GridViewColumnHeader  
+                                        Tag="DepartmentName" 
+                                        Click="DepInDep_GridViewColumnHeader_Click" 
+                                        FontSize="6" >
+                                        Название
+                                    </GridViewColumnHeader>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
+                            <GridViewColumn  DisplayMemberBinding="{Binding CountPerson}" Width="60" >
+                                <GridViewColumn.Header >
+                                    <GridViewColumnHeader 
+                                        Tag="CountPerson" 
+                                       Click="DepInDep_GridViewColumnHeader_Click" 
+                                        FontSize="6" >
+                                        Кол-во сотрудников
+                                    </GridViewColumnHeader>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
+                            <GridViewColumn  DisplayMemberBinding="{Binding CountDepartment}" Width="60">
+                                <GridViewColumn.Header>
+                                    <GridViewColumnHeader  
+                                        Tag="CountDepartment" 
+                                        Click="DepInDep_GridViewColumnHeader_Click" 
+                                        FontSize="6" >
+                                        Кол-во департаментов
+                                    </GridViewColumnHeader>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -111,13 +195,51 @@
                          Margin="5"
                           FontSize="9"
                           HorizontalAlignment="Stretch" 
-                          SelectionChanged="PersonsInDepartment_SelectionChanged" MouseDoubleClick="PersonsInDepartment_MouseDoubleClick">
+                          SelectionChanged="PersonsInDepartment_SelectionChanged" 
+                          MouseDoubleClick="PersonsInDepartment_MouseDoubleClick">
                     <ListView.View >
                         <GridView>
-                            <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}" />
-                            <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}" />
-                            <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Profession}" />
-                            <GridViewColumn Header="З.П." DisplayMemberBinding="{Binding Salary}" />
+                            <GridViewColumn DisplayMemberBinding="{Binding FirstName}"  Width="50">
+                                <GridViewColumn.Header >
+                                    <GridViewColumnHeader 
+                                        Tag="FirstName" 
+                                        Click="PerInDep_GridViewColumnHeader_Click" 
+                                        FontSize="6" >
+                                        Имя
+                                    </GridViewColumnHeader>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
+                            <GridViewColumn  DisplayMemberBinding="{Binding LastName}" Width="50">
+                                <GridViewColumn.Header >
+                                    <GridViewColumnHeader 
+                                        Tag="FirstName" 
+                                        Click="PerInDep_GridViewColumnHeader_Click" 
+                                        FontSize="6" >
+                                        Фамилия
+                                    </GridViewColumnHeader>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Profession}" >
+                                <GridViewColumn.Header >
+                                    <GridViewColumnHeader 
+                                        Tag="Profession" 
+                                        Click="PerInDep_GridViewColumnHeader_Click" 
+                                        FontSize="6" >
+                                        Специальность
+                                    </GridViewColumnHeader>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Salary}" >
+                                <GridViewColumn.Header >
+                                    <GridViewColumnHeader 
+                                        Tag="Salary" 
+                                        Click="PerInDep_GridViewColumnHeader_Click"
+                                        FontSize="6" >
+                                        З.П.
+                                    </GridViewColumnHeader>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
+
                         </GridView>
                     </ListView.View>
                 </ListView>

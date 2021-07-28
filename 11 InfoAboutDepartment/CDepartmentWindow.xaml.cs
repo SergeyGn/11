@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,6 @@ namespace _11_InfoAboutDepartment
         Department newDepartment;
         ObservableCollection<Department> departmentsList = new ObservableCollection<Department>();
         ObservableCollection<Person> personsList = new ObservableCollection<Person>();
-
 
         public CDepartmentWindow(Department department, List<Person> persons)
         {
@@ -59,11 +59,13 @@ namespace _11_InfoAboutDepartment
                         }
                     }
                 }
-
-            for (int i = 0; i < persons.Count; i++) 
+            if (MainWindow.CurrentDepartment.DepartmentName != MainWindow.NameWithoutDepartment)
             {
-                personsList.Add(persons[i]);
-                perInDepCount++;
+                for (int i = 0; i < persons.Count; i++)
+                {
+                    personsList.Add(persons[i]);
+                    perInDepCount++;
+                }
             }
             //люди без департамента
             for(int i=0; i<MainWindow.MainDepartment.Departments[0].Persons.Count; i++)
@@ -179,6 +181,5 @@ namespace _11_InfoAboutDepartment
         {
             Close();
         }
-
     }
 }

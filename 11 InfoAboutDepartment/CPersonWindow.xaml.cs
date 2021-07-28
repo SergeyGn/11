@@ -95,7 +95,7 @@ namespace _11_InfoAboutDepartment
 
             if (InfoPanel.Text == "идет сохранение")
             {
-                Department dep=new Department();
+                Department dep=null;
 
                 for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
                 {
@@ -115,7 +115,7 @@ namespace _11_InfoAboutDepartment
                         newPerson = new Employee(firstName, lastName, dateBirth, dateEmployment, nameDepartment, int.Parse(ValueSlider.Text));
                         break;
                     case "начальник":
-                        newPerson = new Boss(firstName, lastName, dateBirth, dateEmployment, nameDepartment, dep);
+                        newPerson = new Boss(firstName, lastName, dateBirth, dateEmployment, nameDepartment,dep);
                         break;
                     default:
                         InfoPanel.Text = "Выберите специальность";
@@ -129,13 +129,13 @@ namespace _11_InfoAboutDepartment
                         if (MainWindow.MainDepartment.Departments[i].Departments[j].DepartmentName == nameDepartment)
                         {
                             MainWindow.MainDepartment.Departments[i].Departments[j] = dep;
-                            MainWindow.MainDepartment.Departments[i].Departments[j].CountPerson++;
+                            MainWindow.MainDepartment.Departments[i].Departments[j].CountPerson=MainWindow.MainDepartment.Departments[i].Departments[j].Persons.Count;
                         }
                     }
                     if (MainWindow.MainDepartment.Departments[i].DepartmentName == nameDepartment)
                     {
                         MainWindow.MainDepartment.Departments[i] = dep;
-                        MainWindow.MainDepartment.Departments[i].CountPerson++;
+                        MainWindow.MainDepartment.Departments[i].CountPerson= MainWindow.MainDepartment.Departments[i].Persons.Count;
                         break;
                     }
                 }
@@ -186,5 +186,6 @@ namespace _11_InfoAboutDepartment
                 ValueSlider.Text = "";
             }
         }
+        
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,9 @@ namespace _11_InfoAboutDepartment
         public static Person CurrentPerson;
         public static Department CurrentDepartment;
 
+        private GridViewColumnHeader listViewSortCol = null;
+        private string _currentTag;
+
         public MainWindow()
         {
 
@@ -45,8 +49,6 @@ namespace _11_InfoAboutDepartment
             }
             InitializeComponent();
             ListDepartments.ItemsSource = MainDepartment.Departments;
-            
-             
         }
 
         private void CreateDepartment_Click(object sender, RoutedEventArgs e)
@@ -69,7 +71,6 @@ namespace _11_InfoAboutDepartment
             RefreshMainWindow();
         }
 
-
         private void ListDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            Department currentDep = new Department();
@@ -88,6 +89,11 @@ namespace _11_InfoAboutDepartment
         {
             Department currentDep = new Department();
             currentDep = DepartmentsInDepartment.SelectedItem as Department;
+            if (currentDep == null)
+            {
+                PersonsInDepartment.ItemsSource = null;
+                return;
+            }
             PersonsInDepartment.ItemsSource = currentDep.Persons;
 
             CurrentDepartment = currentDep;
@@ -142,19 +148,39 @@ namespace _11_InfoAboutDepartment
 
         public static void DeleteCurrentPerson()
         {
+            Department dep=new Department();
             for (int i = 0; i < MainDepartment.Departments.Count; i++)
             {
-                for (int j = 0; j < MainDepartment.Departments[i].Persons.Count; j++)
+                if(MainDepartment.Departments[i].DepartmentName == CurrentPerson.NameDepartment)
                 {
-                    if (CurrentPerson == MainDepartment.Departments[i].Persons[j])
+                    dep = MainDepartment.Departments[i];
+                    break;
+                }
+            }
+            for(int i=0;i<dep.Persons.Count;i++)
+            {
+                if(dep.Persons[i]==CurrentPerson)
+                {
+                    dep.Persons.Remove(dep.Persons[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < MainDepartment.Departments.Count; i++)
+            {
+                for(int j=0;j<MainDepartment.Departments[i].Departments.Count;j++)
+                {
+                    if(MainDepartment.Departments[i].Departments[j].DepartmentName == dep.DepartmentName)
                     {
-                        MainDepartment.Departments[i].Persons.Remove(MainDepartment.Departments[i].Persons[j]);
-                        MainDepartment.Departments[i].CountPerson--;
+                        MainDepartment.Departments[i].Departments[j] = dep;
                     }
+                }
+                if (MainDepartment.Departments[i].DepartmentName == dep.DepartmentName)
+                {
+                    MainDepartment.Departments[i] = dep;
                 }
             }
         }
-
+        
         private void DeletePerson_Click(object sender, RoutedEventArgs e)
         {
             if (CurrentPerson != null)
@@ -209,8 +235,13 @@ namespace _11_InfoAboutDepartment
                 for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
                 {
 
-                    if (MainWindow.MainDepartment.Departments[i].Departments.Count > 0)
+                    if (MainDepartment.Departments[i].MainDepartmentName == CurrentDepartment.DepartmentName)
                     {
+                        //все департаменты у которых главный был удален, носят статус "без деп" т.е. свободных
+                        MainDepartment.Departments[i].MainDepartmentName = NameWithoutDepartment;
+                        MainDepartment.Departments[i].IsMainDepartment = false;
+                    }
+
                         for (int j = 0; j < MainWindow.MainDepartment.Departments[i].Departments.Count; j++)
                         {
                             if (MainDepartment.Departments[i].Departments[j].MainDepartmentName == CurrentDepartment.DepartmentName)
@@ -220,25 +251,21 @@ namespace _11_InfoAboutDepartment
                                 MainDepartment.Departments[i].Departments[j].IsMainDepartment = false;
                             }
 
-                            if (MainDepartment.Departments[i].Departments[j] == CurrentDepartment)
+                            if (MainDepartment.Departments[i].Departments[j].DepartmentName == CurrentDepartment.DepartmentName)
                             {
                                 MainDepartment.Departments[i].Departments.Remove(MainDepartment.Departments[i].Departments[j]);
 
                             }
                         }
-                    }
-                    if (MainDepartment.Departments[i] == CurrentDepartment)
+
+                }
+                for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
+                {
+                    if (MainDepartment.Departments[i].DepartmentName == CurrentDepartment.DepartmentName)
                     {
                         MainDepartment.Departments.Remove(MainDepartment.Departments[i]);
                     }
-                    if (MainDepartment.Departments[i].MainDepartmentName == CurrentDepartment.DepartmentName)
-                    {
-                        //все департаменты у которых главный был удален, носят статус "без деп" т.е. свободных
-                        MainDepartment.Departments[i].MainDepartmentName = NameWithoutDepartment;
-                        MainDepartment.Departments[i].IsMainDepartment = false;
-                    }
                 }
-
                 //увольнение сотрудников в запас т.е. отправление в депратамент "без деп"
                 for (int i = 0; i < CurrentDepartment.Persons.Count; i++)
                 {
@@ -246,6 +273,7 @@ namespace _11_InfoAboutDepartment
                     MainDepartment.Departments[0].Persons.Add(CurrentDepartment.Persons[i]);
                     MainDepartment.Departments[0].CountPerson++;
                 }
+                Program.Save(MainDepartment);
                 RefreshMainWindow();
             }
         }
@@ -261,6 +289,7 @@ namespace _11_InfoAboutDepartment
         }
         private void GetInfoPanelWindow()
         {
+            if (CurrentPerson == null) return;
             InfoPersonWindow ShowPersonWindow = new InfoPersonWindow();
             ShowPersonWindow.Owner = this;
             ShowPersonWindow.Title = "Show Person";
@@ -269,6 +298,48 @@ namespace _11_InfoAboutDepartment
 
             ShowPersonWindow.ShowDialog();
             RefreshMainWindow();
+        }
+        private void ListDep_GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
+        {
+            SortingListView(sender, ListDepartments);
+        }
+        private void DepInDep_GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
+        {
+            SortingListView(sender, DepartmentsInDepartment);
+        }
+
+        private void PerInDep_GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
+        {
+            SortingListView(sender, PersonsInDepartment);
+        }
+
+        public void SortingListView(object sender, ListView listView)
+        {
+            GridViewColumnHeader column = (sender as GridViewColumnHeader);
+            string sortBy = column.Tag.ToString();
+
+            if (listViewSortCol != null)
+            {
+                listView.Items.SortDescriptions.Clear();
+            }
+            ListSortDirection newDir;
+            if (_currentTag != sortBy)
+            {
+                newDir = ListSortDirection.Ascending;
+                _currentTag = sortBy;
+            }
+            else
+            {
+                newDir = ListSortDirection.Descending;
+                _currentTag = "";
+            }
+            listViewSortCol = column;
+            listView.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
+        }
+
+        private void ListPerson_GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
+        {
+            SortingListView(sender, ListPersons);
         }
     }
 }

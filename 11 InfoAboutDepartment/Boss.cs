@@ -20,18 +20,22 @@ namespace _11_InfoAboutDepartment
             : base(FirstName, LastName, DateBirthDay, DateStartWork, NameDepartment, $"Начальник {NameDepartment}")
         {
             Department = department;
-            Salary = GetSalary();
         }
 
-        internal Department Department { get => _department; set => _department = value; }
+        public Department Department { get => _department; set => _department = value; }
 
         public override double GetSalary()
         {
             double dilaryAllWorkersDepartment=0;
 
-            for(int i=0; i<Department.Persons.Count;i++) //перечисляем всех сотрудников в департаменте начальника
+
+
+            for (int i = 0; i < Department.Persons.Count; i++) //перечисляем всех сотрудников в департаменте начальника
             {
-                dilaryAllWorkersDepartment += Department.Persons[i].GetSalary();
+                if (Department.Persons[i] != this)
+                {
+                    dilaryAllWorkersDepartment += Department.Persons[i].Salary;
+                }
             }
             for (int i = 0; i < Department.Departments.Count; i++)
             {
@@ -39,7 +43,7 @@ namespace _11_InfoAboutDepartment
                 {
                     for (int j = 0; j < Department.Departments[i].Persons.Count; j++)
                     {
-                        dilaryAllWorkersDepartment += Department.Departments[i].Persons[j].GetSalary();
+                        dilaryAllWorkersDepartment += Department.Departments[i].Persons[j].Salary;
                     }
                 }
             }

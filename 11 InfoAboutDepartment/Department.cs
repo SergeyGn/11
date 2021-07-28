@@ -70,8 +70,8 @@ namespace _11_InfoAboutDepartment
         public string DepartmentName { get => _departmentName; set => _departmentName = value; }
         public List<Department> Departments { get; set; }
         public List<Person> Persons { get => _persons; set => _persons = value; }
-        public int CountDepartment { get => _countDepartment; set => _countDepartment = value; }
-        public int CountPerson { get => _countPerson; set => _countPerson = value; }
+        public int CountDepartment { get => GetCountDepartment(); set => _countDepartment = value; }
+        public int CountPerson { get => GetCountPerson(); set => _countPerson = value; }
         public bool IsMainDepartment { get => _isMainDepartment; set => _isMainDepartment = value; }
         public string MainDepartmentName { get => _mainDepartmentName; set => _mainDepartmentName = value; }
     }

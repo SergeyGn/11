@@ -16,8 +16,8 @@ namespace _11_InfoAboutDepartment
         public static void Save(Department dep)
         {
             var jss = new JsonSerializerSettings();
-            jss.TypeNameHandling = TypeNameHandling.All;
-            string json = JsonConvert.SerializeObject(dep,jss);
+            string json = JsonConvert.SerializeObject(dep,Formatting.Indented,
+                new JsonSerializerSettings { ReferenceLoopHandling=ReferenceLoopHandling.Ignore, TypeNameHandling = TypeNameHandling.All});
             File.WriteAllText(path, json);
 
         }
@@ -45,6 +45,7 @@ namespace _11_InfoAboutDepartment
                 return isDate;
             }
         }
+
 
     }
 }
