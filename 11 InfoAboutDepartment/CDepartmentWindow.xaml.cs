@@ -75,12 +75,12 @@ namespace _11_InfoAboutDepartment
             ListDepartments.ItemsSource = departmentsList;
             for(int i=0;i<depInDepCount;i++)                             //выделяем департаменты которые есть уже в субординации
             {
-                ListDepartments.SelectedItem = ListDepartments.Items[i];
+                ListDepartments.SelectedItems.Add(ListDepartments.Items[i]);
             }            
             PersonInDepartment.ItemsSource = personsList;
             for (int i = 0; i < perInDepCount; i++)                             //выделяем людей которые есть уже в субординации
             {
-                PersonInDepartment.SelectedItem = PersonInDepartment.Items[i];
+                PersonInDepartment.SelectedItems.Add(PersonInDepartment.Items[i]);
             }
         } 
 
@@ -108,35 +108,33 @@ namespace _11_InfoAboutDepartment
                 List<Person> AddPerson = new List<Person>();
                 List<Person> NotAddPerson = new List<Person>();
 
-                for (int i = 0; i < PersonInDepartment.SelectedItems.Count; i++)
+                for (int i = 0; i < PersonInDepartment.Items.Count; i++)
                 {
-                    for (int j = 0; j < personsList.Count; j++)
+                    if (PersonInDepartment.Items[i] != PersonInDepartment.SelectedItem) //если чел. Не выделен добавляем его в список не выдел 
                     {
-                        if (PersonInDepartment.SelectedItems[i] == personsList[j])
-                        {
-                            personsList[j].NameDepartment = nameDepartment;
-                            AddPerson.Add(personsList[j]);
-
-                        }
-                        else 
-                        {
-                            personsList[j].NameDepartment = MainWindow.NameWithoutDepartment;
-                            NotAddPerson.Add(personsList[j]);
-                        }
+                        Person person = PersonInDepartment.Items[i] as Person;
+                        person.NameDepartment = MainWindow.NameWithoutDepartment;
+                        NotAddPerson.Add(person);
                     }
+                    else if(PersonInDepartment.Items[i] == PersonInDepartment.SelectedItem) //если чел. выделен добавляем его в список выдел
+                    {
+                        Person person = PersonInDepartment.Items[i] as Person;
+                        person.NameDepartment = nameDepartment;
+                        AddPerson.Add(person);
+                    }
+
                 }
-
-
+                //собираем получившийся департамент
                 newDepartment = new Department(nameDepartment);
                 newDepartment.Departments = AddDepartment;
                 newDepartment.Persons = AddPerson;
                 newDepartment.CountDepartment = AddDepartment.Count;
                 newDepartment.CountPerson = AddPerson.Count;
 
-                MainWindow.MainDepartment.Departments[0].Persons = NotAddPerson; //список тех кого не выбрали;
+                MainWindow.MainDepartment.Departments[0].Persons = NotAddPerson; //список тех кого не выбрали отправляем в без деп;
                 MainWindow.MainDepartment.Departments[0].CountPerson = MainWindow.MainDepartment.Departments[0].Persons.Count;
 
-                if (CreateDepartmentWindow.Title == "Edit Department")
+                if (CreateDepartmentWindow.Title == "Edit Department") //если мы редактируем то значит нужно во всех деп заменить этот деп
                 {
                     for(int i=0;i<MainWindow.MainDepartment.Departments.Count;i++)                          
                     {
@@ -156,18 +154,9 @@ namespace _11_InfoAboutDepartment
                         }
                     }
 
-                    //увольнение сотрудников в запас
-                    for (int i = 0; i < PersonInDepartment.Items.Count; i++)
-                    {
-                        if(PersonInDepartment.Items[i]!=PersonInDepartment.SelectedItem)
-                        {
-                            MainWindow.MainDepartment.Departments[0].Persons.Add(PersonInDepartment.Items[i] as Person);
-                            MainWindow.MainDepartment.Departments[0].CountPerson++;
-                        }
 
-                    }
                 }
-                else
+                else //если создаем то добавляем деп
                 {
                     MainWindow.MainDepartment.Departments.Add(newDepartment);
                 }
