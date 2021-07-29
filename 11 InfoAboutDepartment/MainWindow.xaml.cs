@@ -35,10 +35,23 @@ namespace _11_InfoAboutDepartment
 
         public MainWindow()
         {
+            InitializeComponent();
 
             if (File.Exists(Path))
             {
                 MainDepartment = Program.Load(Path);
+                for(int i=0;i<MainDepartment.Departments.Count;i++)
+                {
+                    for (int j = 0; j < MainDepartment.Departments[i].Persons.Count; j++)
+                    {
+                        if(MainDepartment.Departments[i].Persons[j] is Boss)
+                        {
+                            Boss boss = MainDepartment.Departments[i].Persons[j] as Boss;
+                            boss.Department = MainDepartment.Departments[i];
+                            MainDepartment.Departments[i].Persons[j] = boss;
+                        }
+                    }
+                }
             }
             else
             {
@@ -47,7 +60,7 @@ namespace _11_InfoAboutDepartment
                 MainDepartment.Departments.Add(WithoutDepartment);
 
             }
-            InitializeComponent();
+            
             ListDepartments.ItemsSource = MainDepartment.Departments;
         }
 

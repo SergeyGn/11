@@ -9,17 +9,18 @@ namespace _11_InfoAboutDepartment
     class Boss : Person
     {
         private const double _percent = 0.15; //15 процентов по тз
-        private const double _minDilaryBoss = 1300; //минимальная зп по тз 
+        private const double _minSalaryBoss = 1300; //минимальная зп по тз 
         private  Department _department;
 
-        public Boss() : this("","",DateTime.Now,DateTime.Now,"",new Department())
+        public Boss() : this("", "", DateTime.Now, DateTime.Now, "", new Department())
         {
         }
 
-        public Boss(string FirstName, string LastName, DateTime DateBirthDay, DateTime DateStartWork, string NameDepartment, Department department) 
+        public Boss(string FirstName, string LastName, DateTime DateBirthDay, DateTime DateStartWork, string NameDepartment, 
+            Department Department) 
             : base(FirstName, LastName, DateBirthDay, DateStartWork, NameDepartment, $"Начальник {NameDepartment}")
         {
-            Department = department;
+            this.Department = Department;
             Salary = GetSalary();
         }
 
@@ -27,33 +28,39 @@ namespace _11_InfoAboutDepartment
 
         public override double GetSalary()
         {
-            double dilaryAllWorkersDepartment=0;
-
-            for (int i = 0; i < Department.Persons.Count; i++) //перечисляем всех сотрудников в департаменте начальника
+                double SalaryAllWorkersDepartment = GetAllSalary(Department);
+            if (SalaryAllWorkersDepartment * _percent <= _minSalaryBoss)
             {
-                if (Department.Persons[i] != this)
-                {
-                    dilaryAllWorkersDepartment += Department.Persons[i].Salary;
-                }
-            }
-            for (int i = 0; i < Department.Departments.Count; i++)
-            {
-                if (Department.Departments[i].Persons.Count > 0)
-                {
-                    for (int j = 0; j < Department.Departments[i].Persons.Count; j++)
-                    {
-                        dilaryAllWorkersDepartment += Department.Departments[i].Persons[j].Salary;
-                    }
-                }
-            }
-            if (dilaryAllWorkersDepartment*_percent<=_minDilaryBoss)
-            {
-                return _minDilaryBoss;
+                    return _minSalaryBoss;
             }
             else
             {
-                return dilaryAllWorkersDepartment * _percent;
+                return SalaryAllWorkersDepartment * _percent;
             }
+
+        }
+
+        private double GetAllSalary(Department dep)
+        {
+            double AllSalary = 0;
+            if (dep.Persons.Count > 0)
+            {
+                for (int i = 0; i < dep.Persons.Count; i++)
+                {
+                    if (dep.Persons[i] != this)
+                    {
+                        AllSalary += dep.Persons[i].Salary;
+                    }
+                }
+            }
+            if (dep.Departments.Count > 0)
+            {
+                for (int i = 0; i < dep.Departments.Count; i++)
+                {
+                    AllSalary += GetAllSalary(dep.Departments[i]);
+                }
+            }
+            return AllSalary;
         }
     }
 }

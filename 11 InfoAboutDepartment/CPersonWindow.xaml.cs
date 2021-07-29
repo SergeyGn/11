@@ -115,13 +115,45 @@ namespace _11_InfoAboutDepartment
                         newPerson = new Employee(firstName, lastName, dateBirth, dateEmployment, nameDepartment, int.Parse(ValueSlider.Text));
                         break;
                     case "начальник":
+                        //проверка есть ли босс в этом департаменте
+                        if (Title != "Edit Person")
+                        {
+                            if (dep.Persons.Count > 0)
+                            {
+                                for (int i = 0; i < dep.Persons.Count; i++)
+                                {
+                                    if (dep.Persons[i] is Boss)
+                                    {
+                                        InfoPanel.Text = "Уже есть начальник в выбранном департаменте";
+                                        return;
+                                    }
+                                }
+                            }
+                        }
                         newPerson = new Boss(firstName, lastName, dateBirth, dateEmployment, nameDepartment,dep);
                         break;
                     default:
                         InfoPanel.Text = "Выберите специальность";
                         return;
                 }
-                dep.Persons.Add(newPerson);
+                //если редактируем то нужно переопределить человека
+                if (Title == "Edit Person")
+                {
+                    if (dep.Persons.Count > 0)
+                    {
+                        for (int i = 0; i < dep.Persons.Count; i++)
+                        {
+                            if(dep.Persons[i]==MainWindow.CurrentPerson)
+                            {
+                                dep.Persons[i] = newPerson;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    dep.Persons.Add(newPerson);
+                }
                 for (int i = 0; i < MainWindow.MainDepartment.Departments.Count; i++)
                 {
                     for(int j=0;j<MainWindow.MainDepartment.Departments[i].Departments.Count; j++)
