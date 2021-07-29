@@ -1,20 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 
 
@@ -63,6 +50,7 @@ namespace _11_InfoAboutDepartment
             {
                 for (int i = 0; i < persons.Count; i++)
                 {
+                    persons[i].NameDepartment = "не определено";
                     personsList.Add(persons[i]);
                     perInDepCount++;
                 }
@@ -70,6 +58,7 @@ namespace _11_InfoAboutDepartment
             //люди без департамента
             for(int i=0; i<MainWindow.MainDepartment.Departments[0].Persons.Count; i++)
             {
+                MainWindow.MainDepartment.Departments[0].Persons[i].NameDepartment = "не определено";
                 personsList.Add(MainWindow.MainDepartment.Departments[0].Persons[i]);
             }
             ListDepartments.ItemsSource = departmentsList;
@@ -95,7 +84,13 @@ namespace _11_InfoAboutDepartment
                 string nameDepartment = NameDepartment.Text;
 
                 List<Department> AddDepartment = new List<Department>();
-
+                 // Для того чтобы не выбранные департаменты имели статус свободных
+                for (int i = 0; i < ListDepartments.Items.Count; i++)    
+                {
+                    Department dep = ListDepartments.Items[i] as Department;
+                    dep.IsMainDepartment = false;
+                    dep.MainDepartmentName = "не определено";
+                }
 
                 for (int i = 0; i < ListDepartments.SelectedItems.Count; i++)
                 {
@@ -105,34 +100,44 @@ namespace _11_InfoAboutDepartment
                     AddDepartment.Add(dep);
                 }
 
+
                 List<Person> AddPerson = new List<Person>();
                 List<Person> NotAddPerson = new List<Person>();
 
-                for (int i = 0; i < PersonInDepartment.Items.Count; i++)
+                if (PersonInDepartment.SelectedItems.Count == 0) //если нечего не выбрано то все идет в список без деп
                 {
-                    if (PersonInDepartment.Items[i] != PersonInDepartment.SelectedItem) //если чел. Не выделен добавляем его в список не выдел 
+                    for (int j = 0; j < personsList.Count; j++)
                     {
-                        Person person = PersonInDepartment.Items[i] as Person;
-                        person.NameDepartment = MainWindow.NameWithoutDepartment;
-                        NotAddPerson.Add(person);
+                        personsList[j].NameDepartment = MainWindow.NameWithoutDepartment;
+                        NotAddPerson.Add(personsList[j]); //добавляем все не выделенные в список
                     }
-                    else if(PersonInDepartment.Items[i] == PersonInDepartment.SelectedItem) //если чел. выделен добавляем его в список выдел
+                }
+                else
+                {
+                    for (int i = 0; i < PersonInDepartment.SelectedItems.Count; i++) // если чел.выделен добавляем его в список выдел
                     {
-                        Person person = PersonInDepartment.Items[i] as Person;
+                        Person person = PersonInDepartment.SelectedItems[i] as Person;
                         person.NameDepartment = nameDepartment;
                         AddPerson.Add(person);
                     }
-
+                    //в списке остались только не выделенные
+                    for (int j = 0; j < personsList.Count; j++)
+                    {
+                        if (personsList[j].NameDepartment != nameDepartment) //делаем проверку для того чтобы отбросить переопределенные
+                        {
+                            NotAddPerson.Add(personsList[j]); //добавляем все не выделенные в список
+                        }
+                    }
                 }
-                //собираем получившийся департамент
-                newDepartment = new Department(nameDepartment);
+                    //собираем получившийся департамент
+                    newDepartment = new Department(nameDepartment);
                 newDepartment.Departments = AddDepartment;
                 newDepartment.Persons = AddPerson;
                 newDepartment.CountDepartment = AddDepartment.Count;
                 newDepartment.CountPerson = AddPerson.Count;
 
                 MainWindow.MainDepartment.Departments[0].Persons = NotAddPerson; //список тех кого не выбрали отправляем в без деп;
-                MainWindow.MainDepartment.Departments[0].CountPerson = MainWindow.MainDepartment.Departments[0].Persons.Count;
+                //MainWindow.MainDepartment.Departments[0].CountPerson = MainWindow.MainDepartment.Departments[0].Persons.Count;
 
                 if (CreateDepartmentWindow.Title == "Edit Department") //если мы редактируем то значит нужно во всех деп заменить этот деп
                 {
@@ -153,8 +158,6 @@ namespace _11_InfoAboutDepartment
                             }
                         }
                     }
-
-
                 }
                 else //если создаем то добавляем деп
                 {
@@ -163,7 +166,6 @@ namespace _11_InfoAboutDepartment
                 Program.Save(MainWindow.MainDepartment);
                 Close();
             }
-
         }
 
         private void ButtonCreateDepartmentCencel_Click(object sender, RoutedEventArgs e)

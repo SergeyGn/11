@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+
 
 namespace _11_InfoAboutDepartment
 {
@@ -45,8 +42,8 @@ namespace _11_InfoAboutDepartment
             this.DepartmentName = DepartmentName;
             this.Persons = Persons;
             this.Departments = Departments;
-            CountPerson = GetCountPerson();
-            CountDepartment = GetCountDepartment();
+            //CountPerson = GetCountPerson();
+            //CountDepartment = GetCountDepartment();
         }
 
 
