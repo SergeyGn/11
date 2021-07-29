@@ -35,7 +35,7 @@ namespace _11_InfoAboutDepartment
         private void ButtonInfoPersonOk_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.DeleteCurrentPerson();
-            Program.Save(MainWindow.MainDepartment);
+            Program.Save(MainWindow.MainDepartment, MainWindow.Path);
             Close();
         }
 

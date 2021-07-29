@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:_11_InfoAboutDepartment"
         mc:Ignorable="d"
         Title="Create Department" 
-        Height="450" MinHeight="450"
-        Width="400" MaxWidth="400"
+        Height="450" MinHeight="450" 
+        Width="600" MinWidth="600"
         x:Name="CreateDepartmentWindow">
     <Grid Background="#FFB1DFDF">
         <Grid.RowDefinitions>

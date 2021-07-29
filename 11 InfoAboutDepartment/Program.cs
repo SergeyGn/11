@@ -11,24 +11,27 @@ namespace _11_InfoAboutDepartment
 {
     public class Program
     {
-        public static string path = "test.json";
-
-        public static void Save(Department dep)
+        public static string TestFilePath = "test.json";
+        public static string FilePath = "file.json";
+        public static void Save(Department dep, string path)
         {
-            var jss = new JsonSerializerSettings();
-            string json = JsonConvert.SerializeObject(dep,Formatting.Indented,
-                new JsonSerializerSettings { ReferenceLoopHandling=ReferenceLoopHandling.Ignore, TypeNameHandling = TypeNameHandling.All});
-            File.WriteAllText(path, json);
-
+            //if (path != TestFilePath)  //в тестовом режиме нельзя сохраняться чтобы не засорить тестовый файл
+            //{
+                var jss = new JsonSerializerSettings();
+                string json = JsonConvert.SerializeObject(dep, Formatting.Indented,
+                    new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore, TypeNameHandling = TypeNameHandling.All });
+                File.WriteAllText(path, json);
+            //}
         }
-        public static Department  Load()
+        public static Department  Load(string path)
         {
-            Department dep = new Department();
-            var jss = new JsonSerializerSettings();
-            jss.TypeNameHandling = TypeNameHandling.All;
-            string json = File.ReadAllText(path);
-            dep=JsonConvert.DeserializeObject<Department>(json,jss);
-            return dep;
+
+                Department dep = new Department();
+                var jss = new JsonSerializerSettings();
+                jss.TypeNameHandling = TypeNameHandling.All;
+                string json = File.ReadAllText(path);
+                dep = JsonConvert.DeserializeObject<Department>(json, jss);
+                return dep;
         }
 
         public static bool CheckDate(string input)

@@ -29,16 +29,16 @@ namespace _11_InfoAboutDepartment
         public static Department MainDepartment = new Department("mainDepartment");
         public static Person CurrentPerson;
         public static Department CurrentDepartment;
-
+        public static string Path=Program.TestFilePath;
         private GridViewColumnHeader listViewSortCol = null;
         private string _currentTag;
 
         public MainWindow()
         {
 
-            if (File.Exists(Program.path))
+            if (File.Exists(Path))
             {
-                MainDepartment = Program.Load();
+                MainDepartment = Program.Load(Path);
             }
             else
             {
@@ -273,7 +273,7 @@ namespace _11_InfoAboutDepartment
                     MainDepartment.Departments[0].Persons.Add(CurrentDepartment.Persons[i]);
                     MainDepartment.Departments[0].CountPerson++;
                 }
-                Program.Save(MainDepartment);
+                Program.Save(MainDepartment,Path);
                 RefreshMainWindow();
             }
         }

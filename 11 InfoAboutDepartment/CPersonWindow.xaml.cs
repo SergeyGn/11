@@ -140,7 +140,7 @@ namespace _11_InfoAboutDepartment
                     }
                 }
                 InfoPanel.Text = "идет сохранение";
-                Program.Save(MainWindow.MainDepartment);
+                Program.Save(MainWindow.MainDepartment, MainWindow.Path);
                 Close();
             }
 

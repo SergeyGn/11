@@ -163,7 +163,7 @@ namespace _11_InfoAboutDepartment
                 {
                     MainWindow.MainDepartment.Departments.Add(newDepartment);
                 }
-                Program.Save(MainWindow.MainDepartment);
+                Program.Save(MainWindow.MainDepartment,MainWindow.Path);
                 Close();
             }
         }
