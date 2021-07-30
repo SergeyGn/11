@@ -1,0 +1,1534 @@
+{
+  "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+  "DepartmentName": "mainDepartment",
+  "Departments": {
+    "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+    "$values": [
+      {
+        "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+        "DepartmentName": "(без департамента)",
+        "Departments": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+          "$values": []
+        },
+        "Persons": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+          "$values": []
+        },
+        "CountDepartment": 0,
+        "CountPerson": 0,
+        "IsMainDepartment": true,
+        "MainDepartmentName": null
+      },
+      {
+        "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+        "DepartmentName": "Генеральный департамент",
+        "Departments": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+              "DepartmentName": "Коммерческий департамент",
+              "Departments": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                    "DepartmentName": "Отдел маркетинга и рекламы",
+                    "Departments": {
+                      "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                      "$values": []
+                    },
+                    "Persons": {
+                      "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                      "$values": [
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Сергей",
+                          "LastName": "Сергеев",
+                          "DateBirthDay": "2000-01-10T00:00:00",
+                          "DateStartWork": "2020-08-10T00:00:00",
+                          "Experience": 0,
+                          "NameDepartment": "Отдел маркетинга и рекламы",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 21,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Иван",
+                          "LastName": "Иванов",
+                          "DateBirthDay": "1996-05-10T00:00:00",
+                          "DateStartWork": "2018-12-12T00:00:00",
+                          "Experience": 2,
+                          "NameDepartment": "Отдел маркетинга и рекламы",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 25,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Полина",
+                          "LastName": "Аверина",
+                          "DateBirthDay": "1999-05-18T00:00:00",
+                          "DateStartWork": "2020-01-20T00:00:00",
+                          "Experience": 1,
+                          "NameDepartment": "Отдел маркетинга и рекламы",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 22,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+                          "Department": {
+                            "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                            "DepartmentName": "",
+                            "Departments": {
+                              "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                              "$values": []
+                            },
+                            "Persons": {
+                              "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                              "$values": []
+                            },
+                            "CountDepartment": 0,
+                            "CountPerson": 0,
+                            "IsMainDepartment": false,
+                            "MainDepartmentName": null
+                          },
+                          "FirstName": "Вадим",
+                          "LastName": "Ветров",
+                          "DateBirthDay": "2000-01-20T00:00:00",
+                          "DateStartWork": "2020-07-19T00:00:00",
+                          "Experience": 1,
+                          "NameDepartment": "Отдел маркетинга и рекламы",
+                          "Salary": 1300.0,
+                          "CountYearsPerson": 21,
+                          "Profession": "Начальник Отдел маркетинга и рекламы"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Леонид",
+                          "LastName": "Половцев",
+                          "DateBirthDay": "1997-02-10T00:00:00",
+                          "DateStartWork": "2020-03-10T00:00:00",
+                          "Experience": 1,
+                          "NameDepartment": "Отдел маркетинга и рекламы",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 24,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Intern, 11 InfoAboutDepartment",
+                          "FirstName": "Лариса",
+                          "LastName": "Лапова",
+                          "DateBirthDay": "1998-01-10T00:00:00",
+                          "DateStartWork": "2021-02-10T00:00:00",
+                          "Experience": 0,
+                          "NameDepartment": "Отдел маркетинга и рекламы",
+                          "Salary": 300.0,
+                          "CountYearsPerson": 23,
+                          "Profession": "Интерн"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Cергей",
+                          "LastName": "Моисеев",
+                          "DateBirthDay": "1997-01-10T00:00:00",
+                          "DateStartWork": "2019-02-20T00:00:00",
+                          "Experience": 2,
+                          "NameDepartment": "Отдел маркетинга и рекламы",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 24,
+                          "Profession": "Рабочий"
+                        }
+                      ]
+                    },
+                    "CountDepartment": 0,
+                    "CountPerson": 7,
+                    "IsMainDepartment": true,
+                    "MainDepartmentName": "Коммерческий департамент"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                    "DepartmentName": "Отдел снабжения и закупок",
+                    "Departments": {
+                      "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                      "$values": []
+                    },
+                    "Persons": {
+                      "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                      "$values": [
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Ян",
+                          "LastName": "Гнатенко",
+                          "DateBirthDay": "1990-01-15T00:00:00",
+                          "DateStartWork": "2019-01-22T00:00:00",
+                          "Experience": 2,
+                          "NameDepartment": "Отдел снабжения и закупок",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 31,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Алексей",
+                          "LastName": "Алексеев",
+                          "DateBirthDay": "1994-01-18T00:00:00",
+                          "DateStartWork": "2017-01-20T00:00:00",
+                          "Experience": 4,
+                          "NameDepartment": "Отдел снабжения и закупок",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 27,
+                          "Profession": "Рабочий"
+                        }
+                      ]
+                    },
+                    "CountDepartment": 0,
+                    "CountPerson": 2,
+                    "IsMainDepartment": true,
+                    "MainDepartmentName": "Коммерческий департамент"
+                  }
+                ]
+              },
+              "Persons": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Анастасия",
+                    "LastName": "Перегудова",
+                    "DateBirthDay": "1999-05-04T00:00:00",
+                    "DateStartWork": "2019-01-20T00:00:00",
+                    "Experience": 2,
+                    "NameDepartment": "Коммерческий департамент",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 22,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+                    "Department": {
+                      "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                      "DepartmentName": "",
+                      "Departments": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "Persons": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "CountDepartment": 0,
+                      "CountPerson": 0,
+                      "IsMainDepartment": false,
+                      "MainDepartmentName": null
+                    },
+                    "FirstName": "Вадим",
+                    "LastName": "Жуков",
+                    "DateBirthDay": "1998-04-12T00:00:00",
+                    "DateStartWork": "2017-01-20T00:00:00",
+                    "Experience": 4,
+                    "NameDepartment": "Коммерческий департамент",
+                    "Salary": 1300.0,
+                    "CountYearsPerson": 23,
+                    "Profession": "Начальник Коммерческий департамент"
+                  }
+                ]
+              },
+              "CountDepartment": 2,
+              "CountPerson": 2,
+              "IsMainDepartment": true,
+              "MainDepartmentName": "Генеральный департамент"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+              "DepartmentName": "Департамент планирования и финансов",
+              "Departments": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                "$values": []
+              },
+              "Persons": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Сергей",
+                    "LastName": "Сидоров",
+                    "DateBirthDay": "1993-02-01T00:00:00",
+                    "DateStartWork": "2020-02-01T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Департамент планирования и финансов",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 28,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Intern, 11 InfoAboutDepartment",
+                    "FirstName": "Анатолий",
+                    "LastName": "Степанов",
+                    "DateBirthDay": "2000-01-10T00:00:00",
+                    "DateStartWork": "2021-02-10T00:00:00",
+                    "Experience": 0,
+                    "NameDepartment": "Департамент планирования и финансов",
+                    "Salary": 300.0,
+                    "CountYearsPerson": 21,
+                    "Profession": "Интерн"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+                    "Department": {
+                      "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                      "DepartmentName": "",
+                      "Departments": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "Persons": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "CountDepartment": 0,
+                      "CountPerson": 0,
+                      "IsMainDepartment": false,
+                      "MainDepartmentName": null
+                    },
+                    "FirstName": "Даниил",
+                    "LastName": "Поляков",
+                    "DateBirthDay": "1994-04-10T00:00:00",
+                    "DateStartWork": "2014-05-10T00:00:00",
+                    "Experience": 7,
+                    "NameDepartment": "Департамент планирования и финансов",
+                    "Salary": 1300.0,
+                    "CountYearsPerson": 27,
+                    "Profession": "Начальник Департамент планирования и финансов"
+                  }
+                ]
+              },
+              "CountDepartment": 0,
+              "CountPerson": 3,
+              "IsMainDepartment": true,
+              "MainDepartmentName": "Генеральный департамент"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+              "DepartmentName": "Производственный отдел",
+              "Departments": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                    "DepartmentName": "Отдел тех кон-ля",
+                    "Departments": {
+                      "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                      "$values": []
+                    },
+                    "Persons": {
+                      "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                      "$values": [
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Леонид",
+                          "LastName": "Ветров",
+                          "DateBirthDay": "1998-03-10T00:00:00",
+                          "DateStartWork": "2019-01-20T00:00:00",
+                          "Experience": 2,
+                          "NameDepartment": "Отдел тех кон-ля",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 23,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+                          "Department": {
+                            "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                            "DepartmentName": "",
+                            "Departments": {
+                              "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                              "$values": []
+                            },
+                            "Persons": {
+                              "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                              "$values": []
+                            },
+                            "CountDepartment": 0,
+                            "CountPerson": 0,
+                            "IsMainDepartment": false,
+                            "MainDepartmentName": null
+                          },
+                          "FirstName": "Платон",
+                          "LastName": "Кашковский",
+                          "DateBirthDay": "1990-02-28T00:00:00",
+                          "DateStartWork": "2016-02-20T00:00:00",
+                          "Experience": 5,
+                          "NameDepartment": "Отдел тех кон-ля",
+                          "Salary": 1300.0,
+                          "CountYearsPerson": 31,
+                          "Profession": "Начальник Отдел тех кон-ля"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Максим",
+                          "LastName": "Дорохов",
+                          "DateBirthDay": "1995-06-05T00:00:00",
+                          "DateStartWork": "2019-01-20T00:00:00",
+                          "Experience": 2,
+                          "NameDepartment": "Отдел тех кон-ля",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 26,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 27,
+                          "FirstName": "Полина",
+                          "LastName": "Губова",
+                          "DateBirthDay": "2001-08-04T00:00:00",
+                          "DateStartWork": "2020-02-20T00:00:00",
+                          "Experience": 1,
+                          "NameDepartment": "Отдел тех кон-ля",
+                          "Salary": 2160.0,
+                          "CountYearsPerson": 19,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Роман",
+                          "LastName": "Быков",
+                          "DateBirthDay": "1997-02-10T00:00:00",
+                          "DateStartWork": "2020-01-20T00:00:00",
+                          "Experience": 1,
+                          "NameDepartment": "Отдел тех кон-ля",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 24,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Лариса",
+                          "LastName": "Думова",
+                          "DateBirthDay": "1998-03-19T00:00:00",
+                          "DateStartWork": "2020-01-20T00:00:00",
+                          "Experience": 1,
+                          "NameDepartment": "Отдел тех кон-ля",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 23,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Intern, 11 InfoAboutDepartment",
+                          "FirstName": "Ярослав",
+                          "LastName": "Клопов",
+                          "DateBirthDay": "2001-05-10T00:00:00",
+                          "DateStartWork": "2020-03-20T00:00:00",
+                          "Experience": 1,
+                          "NameDepartment": "Отдел тех кон-ля",
+                          "Salary": 300.0,
+                          "CountYearsPerson": 20,
+                          "Profession": "Интерн"
+                        }
+                      ]
+                    },
+                    "CountDepartment": 0,
+                    "CountPerson": 7,
+                    "IsMainDepartment": true,
+                    "MainDepartmentName": "Производственный отдел"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                    "DepartmentName": "Отдел брака",
+                    "Departments": {
+                      "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                      "$values": []
+                    },
+                    "Persons": {
+                      "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                      "$values": [
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 31,
+                          "FirstName": "Серегей",
+                          "LastName": "Слонов",
+                          "DateBirthDay": "1993-05-12T00:00:00",
+                          "DateStartWork": "2019-05-20T00:00:00",
+                          "Experience": 2,
+                          "NameDepartment": "Отдел брака",
+                          "Salary": 2480.0,
+                          "CountYearsPerson": 28,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 24,
+                          "FirstName": "Пётр",
+                          "LastName": "Клокнев",
+                          "DateBirthDay": "1999-01-10T00:00:00",
+                          "DateStartWork": "2019-02-20T00:00:00",
+                          "Experience": 2,
+                          "NameDepartment": "Отдел брака",
+                          "Salary": 1920.0,
+                          "CountYearsPerson": 22,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 30,
+                          "FirstName": "Илья",
+                          "LastName": "Иванов",
+                          "DateBirthDay": "2000-04-22T00:00:00",
+                          "DateStartWork": "2018-05-20T00:00:00",
+                          "Experience": 3,
+                          "NameDepartment": "Отдел брака",
+                          "Salary": 2400.0,
+                          "CountYearsPerson": 21,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 25,
+                          "FirstName": "Вячеслав",
+                          "LastName": "Вячев",
+                          "DateBirthDay": "1993-05-02T00:00:00",
+                          "DateStartWork": "2020-06-20T00:00:00",
+                          "Experience": 1,
+                          "NameDepartment": "Отдел брака",
+                          "Salary": 2000.0,
+                          "CountYearsPerson": 28,
+                          "Profession": "Рабочий"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+                          "Department": {
+                            "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                            "DepartmentName": "",
+                            "Departments": {
+                              "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                              "$values": []
+                            },
+                            "Persons": {
+                              "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                              "$values": []
+                            },
+                            "CountDepartment": 0,
+                            "CountPerson": 0,
+                            "IsMainDepartment": false,
+                            "MainDepartmentName": null
+                          },
+                          "FirstName": "Екатерина",
+                          "LastName": "Пунина",
+                          "DateBirthDay": "1999-02-04T00:00:00",
+                          "DateStartWork": "2018-09-20T00:00:00",
+                          "Experience": 2,
+                          "NameDepartment": "Отдел брака",
+                          "Salary": 1300.0,
+                          "CountYearsPerson": 22,
+                          "Profession": "Начальник Отдел брака"
+                        },
+                        {
+                          "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                          "CountWorkingDay": 12,
+                          "FirstName": "Елена",
+                          "LastName": "Перегудова",
+                          "DateBirthDay": "1998-09-10T00:00:00",
+                          "DateStartWork": "2020-01-20T00:00:00",
+                          "Experience": 1,
+                          "NameDepartment": "Отдел брака",
+                          "Salary": 960.0,
+                          "CountYearsPerson": 22,
+                          "Profession": "Рабочий"
+                        }
+                      ]
+                    },
+                    "CountDepartment": 0,
+                    "CountPerson": 6,
+                    "IsMainDepartment": true,
+                    "MainDepartmentName": "Производственный отдел"
+                  }
+                ]
+              },
+              "Persons": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Сергей",
+                    "LastName": "Румянцев",
+                    "DateBirthDay": "1993-09-20T00:00:00",
+                    "DateStartWork": "2020-01-20T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Производственный отдел",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 27,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+                    "Department": {
+                      "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                      "DepartmentName": "",
+                      "Departments": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "Persons": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "CountDepartment": 0,
+                      "CountPerson": 0,
+                      "IsMainDepartment": false,
+                      "MainDepartmentName": null
+                    },
+                    "FirstName": "Алексей",
+                    "LastName": "Лобов",
+                    "DateBirthDay": "1990-06-10T00:00:00",
+                    "DateStartWork": "2020-01-20T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Производственный отдел",
+                    "Salary": 1300.0,
+                    "CountYearsPerson": 31,
+                    "Profession": "Начальник Производственный отдел"
+                  }
+                ]
+              },
+              "CountDepartment": 2,
+              "CountPerson": 2,
+              "IsMainDepartment": true,
+              "MainDepartmentName": "Генеральный департамент"
+            }
+          ]
+        },
+        "Persons": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+              "FirstName": "Пётр",
+              "LastName": "Васильев",
+              "DateBirthDay": "1987-01-22T00:00:00",
+              "DateStartWork": "2015-03-22T00:00:00",
+              "Experience": 6,
+              "NameDepartment": "Генеральный департамент",
+              "Salary": 8301.0,
+              "CountYearsPerson": 34,
+              "Profession": "Начальник Генеральный департамент"
+            }
+          ]
+        },
+        "CountDepartment": 3,
+        "CountPerson": 1,
+        "IsMainDepartment": false,
+        "MainDepartmentName": null
+      },
+      {
+        "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+        "DepartmentName": "Коммерческий департамент",
+        "Departments": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+              "DepartmentName": "Отдел маркетинга и рекламы",
+              "Departments": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                "$values": []
+              },
+              "Persons": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Сергей",
+                    "LastName": "Сергеев",
+                    "DateBirthDay": "2000-01-10T00:00:00",
+                    "DateStartWork": "2020-08-10T00:00:00",
+                    "Experience": 0,
+                    "NameDepartment": "Отдел маркетинга и рекламы",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 21,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Иван",
+                    "LastName": "Иванов",
+                    "DateBirthDay": "1996-05-10T00:00:00",
+                    "DateStartWork": "2018-12-12T00:00:00",
+                    "Experience": 2,
+                    "NameDepartment": "Отдел маркетинга и рекламы",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 25,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Полина",
+                    "LastName": "Аверина",
+                    "DateBirthDay": "1999-05-18T00:00:00",
+                    "DateStartWork": "2020-01-20T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Отдел маркетинга и рекламы",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 22,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+                    "Department": {
+                      "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                      "DepartmentName": "",
+                      "Departments": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "Persons": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "CountDepartment": 0,
+                      "CountPerson": 0,
+                      "IsMainDepartment": false,
+                      "MainDepartmentName": null
+                    },
+                    "FirstName": "Вадим",
+                    "LastName": "Ветров",
+                    "DateBirthDay": "2000-01-20T00:00:00",
+                    "DateStartWork": "2020-07-19T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Отдел маркетинга и рекламы",
+                    "Salary": 1300.0,
+                    "CountYearsPerson": 21,
+                    "Profession": "Начальник Отдел маркетинга и рекламы"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Леонид",
+                    "LastName": "Половцев",
+                    "DateBirthDay": "1997-02-10T00:00:00",
+                    "DateStartWork": "2020-03-10T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Отдел маркетинга и рекламы",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 24,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Intern, 11 InfoAboutDepartment",
+                    "FirstName": "Лариса",
+                    "LastName": "Лапова",
+                    "DateBirthDay": "1998-01-10T00:00:00",
+                    "DateStartWork": "2021-02-10T00:00:00",
+                    "Experience": 0,
+                    "NameDepartment": "Отдел маркетинга и рекламы",
+                    "Salary": 300.0,
+                    "CountYearsPerson": 23,
+                    "Profession": "Интерн"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Cергей",
+                    "LastName": "Моисеев",
+                    "DateBirthDay": "1997-01-10T00:00:00",
+                    "DateStartWork": "2019-02-20T00:00:00",
+                    "Experience": 2,
+                    "NameDepartment": "Отдел маркетинга и рекламы",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 24,
+                    "Profession": "Рабочий"
+                  }
+                ]
+              },
+              "CountDepartment": 0,
+              "CountPerson": 7,
+              "IsMainDepartment": true,
+              "MainDepartmentName": "Коммерческий департамент"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+              "DepartmentName": "Отдел снабжения и закупок",
+              "Departments": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                "$values": []
+              },
+              "Persons": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Ян",
+                    "LastName": "Гнатенко",
+                    "DateBirthDay": "1990-01-15T00:00:00",
+                    "DateStartWork": "2019-01-22T00:00:00",
+                    "Experience": 2,
+                    "NameDepartment": "Отдел снабжения и закупок",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 31,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Алексей",
+                    "LastName": "Алексеев",
+                    "DateBirthDay": "1994-01-18T00:00:00",
+                    "DateStartWork": "2017-01-20T00:00:00",
+                    "Experience": 4,
+                    "NameDepartment": "Отдел снабжения и закупок",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 27,
+                    "Profession": "Рабочий"
+                  }
+                ]
+              },
+              "CountDepartment": 0,
+              "CountPerson": 2,
+              "IsMainDepartment": true,
+              "MainDepartmentName": "Коммерческий департамент"
+            }
+          ]
+        },
+        "Persons": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Анастасия",
+              "LastName": "Перегудова",
+              "DateBirthDay": "1999-05-04T00:00:00",
+              "DateStartWork": "2019-01-20T00:00:00",
+              "Experience": 2,
+              "NameDepartment": "Коммерческий департамент",
+              "Salary": 2480.0,
+              "CountYearsPerson": 22,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+              "FirstName": "Вадим",
+              "LastName": "Жуков",
+              "DateBirthDay": "1998-04-12T00:00:00",
+              "DateStartWork": "2017-01-20T00:00:00",
+              "Experience": 4,
+              "NameDepartment": "Коммерческий департамент",
+              "Salary": 3216.0,
+              "CountYearsPerson": 23,
+              "Profession": "Начальник Коммерческий департамент"
+            }
+          ]
+        },
+        "CountDepartment": 2,
+        "CountPerson": 2,
+        "IsMainDepartment": true,
+        "MainDepartmentName": "Генеральный департамент"
+      },
+      {
+        "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+        "DepartmentName": "Департамент планирования и финансов",
+        "Departments": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+          "$values": []
+        },
+        "Persons": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Сергей",
+              "LastName": "Сидоров",
+              "DateBirthDay": "1993-02-01T00:00:00",
+              "DateStartWork": "2020-02-01T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Департамент планирования и финансов",
+              "Salary": 2480.0,
+              "CountYearsPerson": 28,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Intern, 11 InfoAboutDepartment",
+              "FirstName": "Анатолий",
+              "LastName": "Степанов",
+              "DateBirthDay": "2000-01-10T00:00:00",
+              "DateStartWork": "2021-02-10T00:00:00",
+              "Experience": 0,
+              "NameDepartment": "Департамент планирования и финансов",
+              "Salary": 300.0,
+              "CountYearsPerson": 21,
+              "Profession": "Интерн"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+              "FirstName": "Даниил",
+              "LastName": "Поляков",
+              "DateBirthDay": "1994-04-10T00:00:00",
+              "DateStartWork": "2014-05-10T00:00:00",
+              "Experience": 7,
+              "NameDepartment": "Департамент планирования и финансов",
+              "Salary": 1300.0,
+              "CountYearsPerson": 27,
+              "Profession": "Начальник Департамент планирования и финансов"
+            }
+          ]
+        },
+        "CountDepartment": 0,
+        "CountPerson": 3,
+        "IsMainDepartment": true,
+        "MainDepartmentName": "Генеральный департамент"
+      },
+      {
+        "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+        "DepartmentName": "Производственный отдел",
+        "Departments": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+              "DepartmentName": "Отдел тех кон-ля",
+              "Departments": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                "$values": []
+              },
+              "Persons": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Леонид",
+                    "LastName": "Ветров",
+                    "DateBirthDay": "1998-03-10T00:00:00",
+                    "DateStartWork": "2019-01-20T00:00:00",
+                    "Experience": 2,
+                    "NameDepartment": "Отдел тех кон-ля",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 23,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+                    "Department": {
+                      "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                      "DepartmentName": "",
+                      "Departments": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "Persons": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "CountDepartment": 0,
+                      "CountPerson": 0,
+                      "IsMainDepartment": false,
+                      "MainDepartmentName": null
+                    },
+                    "FirstName": "Платон",
+                    "LastName": "Кашковский",
+                    "DateBirthDay": "1990-02-28T00:00:00",
+                    "DateStartWork": "2016-02-20T00:00:00",
+                    "Experience": 5,
+                    "NameDepartment": "Отдел тех кон-ля",
+                    "Salary": 1300.0,
+                    "CountYearsPerson": 31,
+                    "Profession": "Начальник Отдел тех кон-ля"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Максим",
+                    "LastName": "Дорохов",
+                    "DateBirthDay": "1995-06-05T00:00:00",
+                    "DateStartWork": "2019-01-20T00:00:00",
+                    "Experience": 2,
+                    "NameDepartment": "Отдел тех кон-ля",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 26,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 27,
+                    "FirstName": "Полина",
+                    "LastName": "Губова",
+                    "DateBirthDay": "2001-08-04T00:00:00",
+                    "DateStartWork": "2020-02-20T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Отдел тех кон-ля",
+                    "Salary": 2160.0,
+                    "CountYearsPerson": 19,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Роман",
+                    "LastName": "Быков",
+                    "DateBirthDay": "1997-02-10T00:00:00",
+                    "DateStartWork": "2020-01-20T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Отдел тех кон-ля",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 24,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Лариса",
+                    "LastName": "Думова",
+                    "DateBirthDay": "1998-03-19T00:00:00",
+                    "DateStartWork": "2020-01-20T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Отдел тех кон-ля",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 23,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Intern, 11 InfoAboutDepartment",
+                    "FirstName": "Ярослав",
+                    "LastName": "Клопов",
+                    "DateBirthDay": "2001-05-10T00:00:00",
+                    "DateStartWork": "2020-03-20T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Отдел тех кон-ля",
+                    "Salary": 300.0,
+                    "CountYearsPerson": 20,
+                    "Profession": "Интерн"
+                  }
+                ]
+              },
+              "CountDepartment": 0,
+              "CountPerson": 7,
+              "IsMainDepartment": true,
+              "MainDepartmentName": "Производственный отдел"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+              "DepartmentName": "Отдел брака",
+              "Departments": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                "$values": []
+              },
+              "Persons": {
+                "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                "$values": [
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 31,
+                    "FirstName": "Серегей",
+                    "LastName": "Слонов",
+                    "DateBirthDay": "1993-05-12T00:00:00",
+                    "DateStartWork": "2019-05-20T00:00:00",
+                    "Experience": 2,
+                    "NameDepartment": "Отдел брака",
+                    "Salary": 2480.0,
+                    "CountYearsPerson": 28,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 24,
+                    "FirstName": "Пётр",
+                    "LastName": "Клокнев",
+                    "DateBirthDay": "1999-01-10T00:00:00",
+                    "DateStartWork": "2019-02-20T00:00:00",
+                    "Experience": 2,
+                    "NameDepartment": "Отдел брака",
+                    "Salary": 1920.0,
+                    "CountYearsPerson": 22,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 30,
+                    "FirstName": "Илья",
+                    "LastName": "Иванов",
+                    "DateBirthDay": "2000-04-22T00:00:00",
+                    "DateStartWork": "2018-05-20T00:00:00",
+                    "Experience": 3,
+                    "NameDepartment": "Отдел брака",
+                    "Salary": 2400.0,
+                    "CountYearsPerson": 21,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 25,
+                    "FirstName": "Вячеслав",
+                    "LastName": "Вячев",
+                    "DateBirthDay": "1993-05-02T00:00:00",
+                    "DateStartWork": "2020-06-20T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Отдел брака",
+                    "Salary": 2000.0,
+                    "CountYearsPerson": 28,
+                    "Profession": "Рабочий"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+                    "Department": {
+                      "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+                      "DepartmentName": "",
+                      "Departments": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "Persons": {
+                        "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+                        "$values": []
+                      },
+                      "CountDepartment": 0,
+                      "CountPerson": 0,
+                      "IsMainDepartment": false,
+                      "MainDepartmentName": null
+                    },
+                    "FirstName": "Екатерина",
+                    "LastName": "Пунина",
+                    "DateBirthDay": "1999-02-04T00:00:00",
+                    "DateStartWork": "2018-09-20T00:00:00",
+                    "Experience": 2,
+                    "NameDepartment": "Отдел брака",
+                    "Salary": 1300.0,
+                    "CountYearsPerson": 22,
+                    "Profession": "Начальник Отдел брака"
+                  },
+                  {
+                    "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+                    "CountWorkingDay": 12,
+                    "FirstName": "Елена",
+                    "LastName": "Перегудова",
+                    "DateBirthDay": "1998-09-10T00:00:00",
+                    "DateStartWork": "2020-01-20T00:00:00",
+                    "Experience": 1,
+                    "NameDepartment": "Отдел брака",
+                    "Salary": 960.0,
+                    "CountYearsPerson": 22,
+                    "Profession": "Рабочий"
+                  }
+                ]
+              },
+              "CountDepartment": 0,
+              "CountPerson": 6,
+              "IsMainDepartment": true,
+              "MainDepartmentName": "Производственный отдел"
+            }
+          ]
+        },
+        "Persons": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Сергей",
+              "LastName": "Румянцев",
+              "DateBirthDay": "1993-09-20T00:00:00",
+              "DateStartWork": "2020-01-20T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Производственный отдел",
+              "Salary": 2480.0,
+              "CountYearsPerson": 27,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+              "FirstName": "Алексей",
+              "LastName": "Лобов",
+              "DateBirthDay": "1990-06-10T00:00:00",
+              "DateStartWork": "2020-01-20T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Производственный отдел",
+              "Salary": 4083.0,
+              "CountYearsPerson": 31,
+              "Profession": "Начальник Производственный отдел"
+            }
+          ]
+        },
+        "CountDepartment": 2,
+        "CountPerson": 2,
+        "IsMainDepartment": true,
+        "MainDepartmentName": "Генеральный департамент"
+      },
+      {
+        "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+        "DepartmentName": "Отдел тех кон-ля",
+        "Departments": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+          "$values": []
+        },
+        "Persons": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Леонид",
+              "LastName": "Ветров",
+              "DateBirthDay": "1998-03-10T00:00:00",
+              "DateStartWork": "2019-01-20T00:00:00",
+              "Experience": 2,
+              "NameDepartment": "Отдел тех кон-ля",
+              "Salary": 2480.0,
+              "CountYearsPerson": 23,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+              "FirstName": "Платон",
+              "LastName": "Кашковский",
+              "DateBirthDay": "1990-02-28T00:00:00",
+              "DateStartWork": "2016-02-20T00:00:00",
+              "Experience": 5,
+              "NameDepartment": "Отдел тех кон-ля",
+              "Salary": 1857.0,
+              "CountYearsPerson": 31,
+              "Profession": "Начальник Отдел тех кон-ля"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Максим",
+              "LastName": "Дорохов",
+              "DateBirthDay": "1995-06-05T00:00:00",
+              "DateStartWork": "2019-01-20T00:00:00",
+              "Experience": 2,
+              "NameDepartment": "Отдел тех кон-ля",
+              "Salary": 2480.0,
+              "CountYearsPerson": 26,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 27,
+              "FirstName": "Полина",
+              "LastName": "Губова",
+              "DateBirthDay": "2001-08-04T00:00:00",
+              "DateStartWork": "2020-02-20T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Отдел тех кон-ля",
+              "Salary": 2160.0,
+              "CountYearsPerson": 19,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Роман",
+              "LastName": "Быков",
+              "DateBirthDay": "1997-02-10T00:00:00",
+              "DateStartWork": "2020-01-20T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Отдел тех кон-ля",
+              "Salary": 2480.0,
+              "CountYearsPerson": 24,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Лариса",
+              "LastName": "Думова",
+              "DateBirthDay": "1998-03-19T00:00:00",
+              "DateStartWork": "2020-01-20T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Отдел тех кон-ля",
+              "Salary": 2480.0,
+              "CountYearsPerson": 23,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Intern, 11 InfoAboutDepartment",
+              "FirstName": "Ярослав",
+              "LastName": "Клопов",
+              "DateBirthDay": "2001-05-10T00:00:00",
+              "DateStartWork": "2020-03-20T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Отдел тех кон-ля",
+              "Salary": 300.0,
+              "CountYearsPerson": 20,
+              "Profession": "Интерн"
+            }
+          ]
+        },
+        "CountDepartment": 0,
+        "CountPerson": 7,
+        "IsMainDepartment": true,
+        "MainDepartmentName": "Производственный отдел"
+      },
+      {
+        "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+        "DepartmentName": "Отдел брака",
+        "Departments": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+          "$values": []
+        },
+        "Persons": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Серегей",
+              "LastName": "Слонов",
+              "DateBirthDay": "1993-05-12T00:00:00",
+              "DateStartWork": "2019-05-20T00:00:00",
+              "Experience": 2,
+              "NameDepartment": "Отдел брака",
+              "Salary": 2480.0,
+              "CountYearsPerson": 28,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 24,
+              "FirstName": "Пётр",
+              "LastName": "Клокнев",
+              "DateBirthDay": "1999-01-10T00:00:00",
+              "DateStartWork": "2019-02-20T00:00:00",
+              "Experience": 2,
+              "NameDepartment": "Отдел брака",
+              "Salary": 1920.0,
+              "CountYearsPerson": 22,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 30,
+              "FirstName": "Илья",
+              "LastName": "Иванов",
+              "DateBirthDay": "2000-04-22T00:00:00",
+              "DateStartWork": "2018-05-20T00:00:00",
+              "Experience": 3,
+              "NameDepartment": "Отдел брака",
+              "Salary": 2400.0,
+              "CountYearsPerson": 21,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 25,
+              "FirstName": "Вячеслав",
+              "LastName": "Вячев",
+              "DateBirthDay": "1993-05-02T00:00:00",
+              "DateStartWork": "2020-06-20T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Отдел брака",
+              "Salary": 2000.0,
+              "CountYearsPerson": 28,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+              "FirstName": "Екатерина",
+              "LastName": "Пунина",
+              "DateBirthDay": "1999-02-04T00:00:00",
+              "DateStartWork": "2018-09-20T00:00:00",
+              "Experience": 2,
+              "NameDepartment": "Отдел брака",
+              "Salary": 1464.0,
+              "CountYearsPerson": 22,
+              "Profession": "Начальник Отдел брака"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 12,
+              "FirstName": "Елена",
+              "LastName": "Перегудова",
+              "DateBirthDay": "1998-09-10T00:00:00",
+              "DateStartWork": "2020-01-20T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Отдел брака",
+              "Salary": 960.0,
+              "CountYearsPerson": 22,
+              "Profession": "Рабочий"
+            }
+          ]
+        },
+        "CountDepartment": 0,
+        "CountPerson": 6,
+        "IsMainDepartment": true,
+        "MainDepartmentName": "Производственный отдел"
+      },
+      {
+        "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+        "DepartmentName": "Отдел маркетинга и рекламы",
+        "Departments": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+          "$values": []
+        },
+        "Persons": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Сергей",
+              "LastName": "Сергеев",
+              "DateBirthDay": "2000-01-10T00:00:00",
+              "DateStartWork": "2020-08-10T00:00:00",
+              "Experience": 0,
+              "NameDepartment": "Отдел маркетинга и рекламы",
+              "Salary": 2480.0,
+              "CountYearsPerson": 21,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Иван",
+              "LastName": "Иванов",
+              "DateBirthDay": "1996-05-10T00:00:00",
+              "DateStartWork": "2018-12-12T00:00:00",
+              "Experience": 2,
+              "NameDepartment": "Отдел маркетинга и рекламы",
+              "Salary": 2480.0,
+              "CountYearsPerson": 25,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Полина",
+              "LastName": "Аверина",
+              "DateBirthDay": "1999-05-18T00:00:00",
+              "DateStartWork": "2020-01-20T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Отдел маркетинга и рекламы",
+              "Salary": 2480.0,
+              "CountYearsPerson": 22,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Boss, 11 InfoAboutDepartment",
+              "FirstName": "Вадим",
+              "LastName": "Ветров",
+              "DateBirthDay": "2000-01-20T00:00:00",
+              "DateStartWork": "2020-07-19T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Отдел маркетинга и рекламы",
+              "Salary": 1905.0,
+              "CountYearsPerson": 21,
+              "Profession": "Начальник Отдел маркетинга и рекламы"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Леонид",
+              "LastName": "Половцев",
+              "DateBirthDay": "1997-02-10T00:00:00",
+              "DateStartWork": "2020-03-10T00:00:00",
+              "Experience": 1,
+              "NameDepartment": "Отдел маркетинга и рекламы",
+              "Salary": 2480.0,
+              "CountYearsPerson": 24,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Intern, 11 InfoAboutDepartment",
+              "FirstName": "Лариса",
+              "LastName": "Лапова",
+              "DateBirthDay": "1998-01-10T00:00:00",
+              "DateStartWork": "2021-02-10T00:00:00",
+              "Experience": 0,
+              "NameDepartment": "Отдел маркетинга и рекламы",
+              "Salary": 300.0,
+              "CountYearsPerson": 23,
+              "Profession": "Интерн"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Cергей",
+              "LastName": "Моисеев",
+              "DateBirthDay": "1997-01-10T00:00:00",
+              "DateStartWork": "2019-02-20T00:00:00",
+              "Experience": 2,
+              "NameDepartment": "Отдел маркетинга и рекламы",
+              "Salary": 2480.0,
+              "CountYearsPerson": 24,
+              "Profession": "Рабочий"
+            }
+          ]
+        },
+        "CountDepartment": 0,
+        "CountPerson": 7,
+        "IsMainDepartment": true,
+        "MainDepartmentName": "Коммерческий департамент"
+      },
+      {
+        "$type": "_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment",
+        "DepartmentName": "Отдел снабжения и закупок",
+        "Departments": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Department, 11 InfoAboutDepartment]], mscorlib",
+          "$values": []
+        },
+        "Persons": {
+          "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+          "$values": [
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Ян",
+              "LastName": "Гнатенко",
+              "DateBirthDay": "1990-01-15T00:00:00",
+              "DateStartWork": "2019-01-22T00:00:00",
+              "Experience": 2,
+              "NameDepartment": "Отдел снабжения и закупок",
+              "Salary": 2480.0,
+              "CountYearsPerson": 31,
+              "Profession": "Рабочий"
+            },
+            {
+              "$type": "_11_InfoAboutDepartment.Employee, 11 InfoAboutDepartment",
+              "CountWorkingDay": 31,
+              "FirstName": "Алексей",
+              "LastName": "Алексеев",
+              "DateBirthDay": "1994-01-18T00:00:00",
+              "DateStartWork": "2017-01-20T00:00:00",
+              "Experience": 4,
+              "NameDepartment": "Отдел снабжения и закупок",
+              "Salary": 2480.0,
+              "CountYearsPerson": 27,
+              "Profession": "Рабочий"
+            }
+          ]
+        },
+        "CountDepartment": 0,
+        "CountPerson": 2,
+        "IsMainDepartment": true,
+        "MainDepartmentName": "Коммерческий департамент"
+      }
+    ]
+  },
+  "Persons": {
+    "$type": "System.Collections.Generic.List`1[[_11_InfoAboutDepartment.Person, 11 InfoAboutDepartment]], mscorlib",
+    "$values": []
+  },
+  "CountDepartment": 9,
+  "CountPerson": 0,
+  "IsMainDepartment": false,
+  "MainDepartmentName": null
+}

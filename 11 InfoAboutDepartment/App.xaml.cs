@@ -13,5 +13,6 @@ namespace _11_InfoAboutDepartment
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

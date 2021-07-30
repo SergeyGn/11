@@ -29,13 +29,22 @@ namespace _11_InfoAboutDepartment
         public static Department MainDepartment = new Department("mainDepartment");
         public static Person CurrentPerson;
         public static Department CurrentDepartment;
-        public static string Path=Program.TestFilePath;
         private GridViewColumnHeader listViewSortCol = null;
         private string _currentTag;
+        public static string Path;
 
         public MainWindow()
         {
             InitializeComponent();
+            
+            if (StartWindow.IsTest==true)
+            {
+                Path = Program.TestFilePath;
+            }
+            else
+            {
+                Path = Program.FilePath;
+            }
 
             if (File.Exists(Path))
             {
