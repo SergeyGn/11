@@ -10,7 +10,6 @@ namespace _11_InfoAboutDepartment
     {
         private const double _percent = 0.15; //15 процентов по тз
         private const double _minSalaryBoss = 1300; //минимальная зп по тз 
-        private  Department _department;
 
         public Boss() : this("", "", DateTime.Now, DateTime.Now, "", new Department())
         {
@@ -24,7 +23,7 @@ namespace _11_InfoAboutDepartment
             Salary = GetSalary();
         }
 
-        public Department Department { get => _department; set => _department = value; }
+        public Department Department { get; set; }
 
         public override double GetSalary()
         {

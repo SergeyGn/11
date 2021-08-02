@@ -5,28 +5,6 @@ namespace _11_InfoAboutDepartment
 {
     public class Department
     {
-
-        /// <summary>
-        /// Название департамента
-        /// </summary>
-        private string _departmentName;
-        /// <summary>
-        /// сотрудники в подчинении департамента
-        /// </summary>
-        private List<Person> _persons;
-        /// <summary>
-        /// кол-во департаментов в подчинении
-        /// </summary>
-        private int _countDepartment;
-        /// <summary>
-        /// кол-во сотрудников в департаменте
-        /// </summary>
-        private int _countPerson;
-        /// <summary>
-        /// есть ли департамент которому этот департамент подчиняется
-        /// </summary>
-        private bool _isMainDepartment;
-        private string _mainDepartmentName;
         public Department(string DepartmentName)
         {
             Persons = new List<Person>();
@@ -42,8 +20,6 @@ namespace _11_InfoAboutDepartment
             this.DepartmentName = DepartmentName;
             this.Persons = Persons;
             this.Departments = Departments;
-            //CountPerson = GetCountPerson();
-            //CountDepartment = GetCountDepartment();
         }
 
 
@@ -64,12 +40,14 @@ namespace _11_InfoAboutDepartment
             return CountDep;
         }
 
-        public string DepartmentName { get => _departmentName; set => _departmentName = value; }
+        private int _countPerson;
+        private int _countDepartment;
+        public string DepartmentName { get; set; }
         public List<Department> Departments { get; set; }
-        public List<Person> Persons { get => _persons; set => _persons = value; }
+        public List<Person> Persons { get; set; }
         public int CountDepartment { get => GetCountDepartment(); set => _countDepartment = value; }
         public int CountPerson { get => GetCountPerson(); set => _countPerson = value; }
-        public bool IsMainDepartment { get => _isMainDepartment; set => _isMainDepartment = value; }
-        public string MainDepartmentName { get => _mainDepartmentName; set => _mainDepartmentName = value; }
+        public bool IsMainDepartment { get; set; }
+        public string MainDepartmentName { get; set; }
     }
 }

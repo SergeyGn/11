@@ -10,24 +10,18 @@ namespace _11_InfoAboutDepartment
 {
   public abstract class Person
     {
-        private string _firstName;
-        private string _lastName;
-        private DateTime date;
-        private DateTime _dateStartWork;
-        private int _experience;
-        private string _nameDepartment;
+        private int _experiance;
         private double _salary;
-        private string _profession;
         private int _countYearsPerson;
-        public string FirstName { get => _firstName; set => _firstName = value; }
-        public string LastName { get => _lastName; set => _lastName = value; }
-        public DateTime DateBirthDay { get => date; set => date = value; }
-        public DateTime DateStartWork { get => _dateStartWork; set => _dateStartWork = value; }
-        public int Experience { get => GetCountYears(DateStartWork); set => _experience = value; }
-        public string NameDepartment { get => _nameDepartment; set => _nameDepartment = value; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime DateBirthDay { get; set; }
+        public DateTime DateStartWork { get; set; }
+        public int Experience { get => GetCountYears(DateStartWork); set => _experiance = value; }
+        public string NameDepartment { get; set; }
         public double Salary { get => GetSalary(); set => _salary = value; }
         public int CountYearsPerson { get=> GetCountYears(DateBirthDay); set => _countYearsPerson = value; }
-        public string Profession { get => _profession; set => _profession = value; }
+        public string Profession { get; set; }
 
         public Person(string FirstName,string LastName,DateTime DateBirthDay,DateTime DateStartWork,string NameDepartment, string Profession)
         {
